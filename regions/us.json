@@ -1,0 +1,1787 @@
+[
+  {
+    "season": 2015,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 2,
+    "name": "Malaysian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 3,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 4,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 5,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 7,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 8,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 9,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 10,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 11,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 12,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 13,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 14,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 15,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 16,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 17,
+    "name": "Mexican Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 18,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2015,
+    "round": 19,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 2,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 3,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 4,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 5,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 7,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 8,
+    "name": "European Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 11,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 12,
+    "name": "German Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 13,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 14,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 15,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 16,
+    "name": "Malaysian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 17,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 18,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 19,
+    "name": "Mexican Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 20,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2016,
+    "round": 21,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 2,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 3,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 4,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 5,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 7,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 8,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 11,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 12,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 13,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 14,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 15,
+    "name": "Malaysian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 16,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 17,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 18,
+    "name": "Mexican Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 19,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2017,
+    "round": 20,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 2,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 3,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 4,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 5,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 7,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 8,
+    "name": "French Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 11,
+    "name": "German Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 12,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 13,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 14,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 15,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 16,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 17,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 18,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 19,
+    "name": "Mexican Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 20,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2018,
+    "round": 21,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 2,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 3,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 4,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 5,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 7,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 8,
+    "name": "French Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 11,
+    "name": "German Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 12,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 13,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 14,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 15,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 16,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 17,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 18,
+    "name": "Mexican Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 19,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 20,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2019,
+    "round": 21,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 1,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 2,
+    "name": "Styrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 3,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 4,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 5,
+    "name": "70th Anniversary Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 6,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 7,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 8,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 9,
+    "name": "Tuscan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 10,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 11,
+    "name": "Eifel Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 12,
+    "name": "Portuguese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 13,
+    "name": "Emilia Romagna Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 14,
+    "name": "Turkish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 15,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 16,
+    "name": "Sakhir Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2020,
+    "round": 17,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 1,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 2,
+    "name": "Emilia Romagna Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 3,
+    "name": "Portuguese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 4,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 5,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 6,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 7,
+    "name": "French Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 8,
+    "name": "Styrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 11,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 12,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 13,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 14,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 15,
+    "name": "Russian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 16,
+    "name": "Turkish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 17,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 18,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 19,
+    "name": "São Paulo Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 20,
+    "name": "Qatar Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 21,
+    "name": "Saudi Arabian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2021,
+    "round": 22,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 1,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 2,
+    "name": "Saudi Arabian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 3,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 4,
+    "name": "Emilia Romagna Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 5,
+    "name": "Miami Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 6,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 7,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 8,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 9,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 11,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 12,
+    "name": "French Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 13,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 14,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 15,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 16,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 17,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 18,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 19,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 20,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 21,
+    "name": "São Paulo Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2022,
+    "round": 22,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 1,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 2,
+    "name": "Saudi Arabian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 3,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 4,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 5,
+    "name": "Miami Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 7,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 8,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 9,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 10,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 11,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 12,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 13,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 14,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 15,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 16,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 17,
+    "name": "Qatar Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 18,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 19,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 20,
+    "name": "São Paulo Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 21,
+    "name": "Las Vegas Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2023,
+    "round": 22,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 1,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 2,
+    "name": "Saudi Arabian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 3,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 4,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 5,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 6,
+    "name": "Miami Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 7,
+    "name": "Emilia Romagna Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 8,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 9,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 10,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 11,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 12,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 13,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 14,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 15,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 16,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 17,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 18,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 19,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 20,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 21,
+    "name": "São Paulo Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 22,
+    "name": "Las Vegas Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 23,
+    "name": "Qatar Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2024,
+    "round": 24,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 2,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 3,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 4,
+    "name": "Bahrain Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 5,
+    "name": "Saudi Arabian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 6,
+    "name": "Miami Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 7,
+    "name": "Emilia Romagna Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 8,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 9,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 10,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 11,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 12,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 13,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 14,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 15,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 16,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 17,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 18,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 19,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 20,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 21,
+    "name": "São Paulo Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 22,
+    "name": "Las Vegas Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 23,
+    "name": "Qatar Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2025,
+    "round": 24,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 1,
+    "name": "Australian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 2,
+    "name": "Chinese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 3,
+    "name": "Japanese Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 4,
+    "name": "Miami Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 5,
+    "name": "Canadian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 6,
+    "name": "Monaco Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 7,
+    "name": "Barcelona Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 8,
+    "name": "Austrian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 9,
+    "name": "British Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 10,
+    "name": "Belgian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 11,
+    "name": "Hungarian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 12,
+    "name": "Dutch Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 13,
+    "name": "Italian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 14,
+    "name": "Spanish Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 15,
+    "name": "Azerbaijan Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 16,
+    "name": "Singapore Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 17,
+    "name": "United States Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 18,
+    "name": "Mexico City Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 19,
+    "name": "Brazilian Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 20,
+    "name": "Las Vegas Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 21,
+    "name": "Qatar Grand Prix",
+    "type": "race",
+    "duration": null
+  },
+  {
+    "season": 2026,
+    "round": 22,
+    "name": "Abu Dhabi Grand Prix",
+    "type": "race",
+    "duration": null
+  }
+]
