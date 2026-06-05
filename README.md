@@ -105,6 +105,14 @@ Rebuild the iOS app. See f1-rewatch README for details.
 
 Durations can be added incrementally — `null` is fine as a placeholder. `url` should be present for all new entries.
 
+## Disclaimer
+
+This project is a community-maintained index of Formula 1 content available on [F1TV](https://f1tv.formula1.com). It is **not** affiliated with, endorsed by, or sponsored by Formula 1, Formula One Management, Liberty Media, or F1TV.
+
+All Formula 1 trademarks, race names, logos, and video content are the property of their respective owners. This repository does not host, distribute, or claim ownership of any video or broadcast material. Entries are metadata and links to content on F1TV; viewing requires an active F1TV subscription in your region.
+
+The catalog is provided as-is and may be incomplete or outdated. Availability on F1TV can change at any time.
+
 ## License
 
-MIT
+MIT License — see [LICENSE](LICENSE).
