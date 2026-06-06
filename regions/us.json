@@ -8889,6 +8889,14 @@
   },
   {
     "season": 2018,
+    "round": 18,
+    "name": "FORMULA 1 PIRELLI 2018 UNITED STATES GRAND PRIX",
+    "type": "race",
+    "duration": null,
+    "url": "https://f1tv.formula1.com/page/916/formula-1-pirelli-2018-united-states-grand-prix"
+  },
+  {
+    "season": 2018,
     "round": 19,
     "name": "FORMULA 1 GRAN PREMIO DE M",
     "type": "race",
@@ -9697,6 +9705,14 @@
   },
   {
     "season": 2023,
+    "round": 18,
+    "name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX",
+    "type": "race",
+    "duration": null,
+    "url": "https://f1tv.formula1.com/page/6655/formula-1-qatar-airways-qatar-grand-prix-2023"
+  },
+  {
+    "season": 2023,
     "round": 19,
     "name": "FORMULA 1 LENOVO UNITED STATES GRAND PRIX",
     "type": "race",
@@ -10118,13 +10134,5 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/10492/formula-1-etihad-airways-abu-dhabi-grand-prix-2025-"
-  },
-  {
-    "season": 2023,
-    "round": 18,
-    "name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6655/formula-1-qatar-airways-qatar-grand-prix-2023"
   }
 ]
