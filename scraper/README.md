@@ -67,9 +67,9 @@ The scraper scrolls through virtualized lists and collects each card by unique U
 Run validation and cleanup from the repo root:
 
 ```bash
-python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
-python3 scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
-python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scraper/scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scraper/scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
+python3 scraper/scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
 ```
 
 ## Server endpoints
@@ -89,6 +89,6 @@ python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-ca
 
 **Wrong round or generic name** (e.g. Canada stored as R6 "FORMULA 1 GRAND PRIX") — update to v1.5+, re-scrape the season listing, then run `enrich_rounds.py --reconcile --fix-names`. v1.5 uses the country label and URL slug when titles use French word order (`GRAND PRIX ... DU CANADA`), merges duplicate href captures from virtualization, and scrolls wall lists in smaller steps.
 
-**`season: 20` instead of `2025`** — update to userscript v1.3+. Run `python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` to repair existing data.
+**`season: 20` instead of `2025`** — update to userscript v1.3+. Run `python3 scraper/scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` to repair existing data.
 
 **Tampermonkey not firing** — check the extension is enabled, the script matches `https://f1tv.formula1.com/*`, and `localhost` is allowed under `@connect`.

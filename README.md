@@ -66,7 +66,7 @@ Browse the catalog in your browser:
 python3 -m http.server 8080
 ```
 
-Open [http://localhost:8080/viewer/](http://localhost:8080/viewer/). You can also use the file picker on that page to load `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` directly.
+Open [http://localhost:8080/scraper/viewer/](http://localhost:8080/scraper/viewer/). You can also use the file picker on that page to load `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` directly.
 
 ## Calendar
 
@@ -95,16 +95,16 @@ Then install `scraper/f1tv-scraper.user.js` in Tampermonkey and scrape pages on 
 ### Post-processing
 
 ```bash
-python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
-python3 scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
-python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scraper/scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scraper/scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
+python3 scraper/scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
 ```
 
 ## Contributing
 
 1. Fork the repo
 2. Add or update entries in the appropriate region file
-3. Run `python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json`
+3. Run `python3 scraper/scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json`
 4. Open a PR with a brief description of what changed
 
 Durations can be added incrementally — `null` is fine as a placeholder. `url` should be present for all new entries.

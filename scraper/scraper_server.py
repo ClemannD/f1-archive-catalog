@@ -14,7 +14,7 @@ import sys
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, os.path.join(REPO_ROOT, "scripts"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "scripts"))
 from catalog_utils import (
     VALID_TYPES,
     is_excluded_content_type,
