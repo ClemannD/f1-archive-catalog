@@ -60,6 +60,16 @@ For seasons where individual races aren't available but a season review exists:
 }
 ```
 
+## Viewer
+
+Browse the catalog in your browser:
+
+```bash
+python3 -m http.server 8080
+```
+
+Open [http://localhost:8080/viewer/](http://localhost:8080/viewer/). You can also use the file picker on that page to load `regions/us.json` directly.
+
 ## Regions
 
 Each region has its own file under `regions/`:
