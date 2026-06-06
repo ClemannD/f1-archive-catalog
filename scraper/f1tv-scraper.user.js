@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F1TV Archive Scraper
 // @namespace    f1-archive-catalog
-// @version      1.5
+// @version      1.6
 // @description  Scrape F1TV archive pages and send data to local catalog server
 // @match        https://f1tv.formula1.com/*
 // @grant        GM_xmlhttpRequest
@@ -28,9 +28,21 @@
     'race': 'race',
     'extended highlights': 'extended_highlights',
     'highlights': 'highlights',
-    'season review': 'season_review',
-    'season recap': 'season_review',
+    'season review': 'season-review',
+    'season recap': 'season-review',
   };
+
+  function isFeederSeries(title, url) {
+    const t = (title || '').trim();
+    if (/^F2\b/i.test(t) || /^F3\b/i.test(t)) return true;
+    if (/\bF2\s+season\b/i.test(t) || /\bF3\s+season\b/i.test(t)) return true;
+    if (/\bformula\s*2\b/i.test(t) || /\bformula\s*3\b/i.test(t)) return true;
+    const slug = ((url || '').split('/').pop() || '').toLowerCase().replace(/\?.*$/, '');
+    if (/^(f2|f3)[-:]/.test(slug)) return true;
+    if (/(?:^|[-/])(f2|f3)(?:[-/]|$)/.test(slug)) return true;
+    if (/\bf[23]-season\b/.test(slug)) return true;
+    return false;
+  }
 
   function parseVideoCard(link) {
     const titleEl = link.querySelector('.video-card-item-title');
@@ -38,6 +50,10 @@
     if (!titleEl) return null;
 
     const fullTitle = titleEl.textContent.trim();
+    const href = link.getAttribute('href');
+    const url = href ? 'https://f1tv.formula1.com' + href.replace(/\?action=play$/, '') : null;
+    if (isFeederSeries(fullTitle, url)) return null;
+
     const season = extractSeason(fullTitle);
     if (!season) return null;
     const name = fullTitle.replace(/^\d{4}\s+/, '');
@@ -50,8 +66,9 @@
       if (parts.length >= 2) type = TYPE_MAP[parts[parts.length - 1].toLowerCase()] || parts[parts.length - 1].toLowerCase();
     }
 
-    const href = link.getAttribute('href');
-    const url = href ? 'https://f1tv.formula1.com' + href.replace(/\?action=play$/, '') : null;
+    if (type === 'season-review') {
+      return { season, round: null, name: season + ' Season Review', type, duration, url };
+    }
     return { season, round: null, name, type, duration, url };
   }
 
@@ -153,7 +170,8 @@
     return { entry: existing, score: existingScore };
   }
 
-  function isRaceEvent(title, round) {
+  function isRaceEvent(title, round, url) {
+    if (isFeederSeries(title, url)) return false;
     if (/pre[- ]?season|testing/i.test(title)) return false;
     if (round != null) return true;
     return /grand prix|gran premio|grande pr[eê]mio/i.test(title);
@@ -256,6 +274,10 @@
     if (!titleEl) return null;
 
     const fullTitle = titleEl.textContent.trim();
+    const href = link.getAttribute('href');
+    const url = href ? 'https://f1tv.formula1.com' + href : null;
+    if (isFeederSeries(fullTitle, url)) return null;
+
     const season = extractSeason(fullTitle);
     if (!season) return null;
 
@@ -266,14 +288,11 @@
       if (roundMatch) round = parseInt(roundMatch[1]);
     }
 
-    if (!isRaceEvent(fullTitle, round)) return null;
+    if (!isRaceEvent(fullTitle, round, url)) return null;
 
     const titleName = extractGrandPrixName(fullTitle);
     const countryEl = link.querySelector('.bundle-card-item-country-container .line-clamp');
     const countryText = countryEl ? countryEl.textContent.trim() : null;
-
-    const href = link.getAttribute('href');
-    const url = href ? 'https://f1tv.formula1.com' + href : null;
     const name = resolveBundleName(fullTitle, titleName, countryText, url);
     const entry = { season, round, name, type: 'race', duration: null, url };
     return { entry, countryText };

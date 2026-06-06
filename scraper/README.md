@@ -25,7 +25,7 @@ Install the extension for your browser using one of the links above. You should 
 
 Alternatively, with the server running you can copy the script from http://localhost:8484/script.
 
-Confirm the script header shows `@version 1.5` or later.
+Confirm the script header shows `@version 1.6` or later.
 
 ### 3. Start the ingest server
 
@@ -51,6 +51,8 @@ Leave this terminal open while scraping.
 
 - **Season listing pages** — race hub links (`/page/...`) with season, round, name, and URL
 - **Race detail pages** — individual video cards (`/detail/...`) with type, duration, and URL
+
+F2 and F3 content is skipped automatically.
 
 The scraper scrolls through virtualized lists and collects each card by unique URL, so all races on the page should be captured.
 

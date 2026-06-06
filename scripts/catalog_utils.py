@@ -4,8 +4,10 @@ import json
 import re
 from pathlib import Path
 
-VALID_TYPES = {"race", "extended_highlights", "highlights", "season_review"}
+VALID_TYPES = {"race", "extended_highlights", "highlights", "season-review"}
+LEGACY_TYPES = {"season_review"}  # migrated to season-review on clean
 ROUND_BOUND_TYPES = {"race", "extended_highlights", "highlights"}
+SEASON_REVIEW_TYPE = "season-review"
 
 DEFAULT_RACES_PATH = (
     Path(__file__).resolve().parents[2].parent
@@ -51,12 +53,14 @@ LOCATION_ALIASES = {
 
 
 def entry_key(entry):
-    """Unique merge key: (season, round, type) or (season, name, type) when round is null."""
+    """Unique merge key: (season, round, type) or (season, type) for season reviews."""
     season = entry["season"]
     typ = entry.get("type", "race")
     round_ = entry.get("round")
     if round_ is not None:
         return (season, round_, typ)
+    if typ == SEASON_REVIEW_TYPE:
+        return (season, typ)
     name = entry.get("name", "").lower().strip()
     return (season, name, typ)
 
@@ -128,11 +132,67 @@ SLUG_STOPWORDS = {
 }
 
 
-def is_season_review_entry(entry):
-    if entry.get("type") == "season_review":
+def is_feeder_series_entry(entry):
+    """F2 / F3 content — not part of the F1 catalog."""
+    name = entry.get("name", "") or ""
+    url = (entry.get("url", "") or "").lower()
+    slug = url.rsplit("/", 1)[-1].split("?")[0]
+
+    if re.search(r"^\s*F2\b", name, re.I) or re.search(r"^\s*F3\b", name, re.I):
         return True
+    if re.search(r"\bF2\s+season\b", name, re.I) or re.search(r"\bF3\s+season\b", name, re.I):
+        return True
+    if re.search(r"\bformula\s*2\b", name, re.I) or re.search(r"\bformula\s*3\b", name, re.I):
+        return True
+    if re.search(r"(?:^|[-/])(f2|f3)(?:[-/]|$)", slug):
+        return True
+    if re.search(r"\bf[23]-season\b", slug):
+        return True
+
+    return False
+
+
+def is_catalog_season_review(entry):
+    """Whole-season review content — not per-race 'In Review' highlights."""
+    typ = entry.get("type", "")
+    if typ in {SEASON_REVIEW_TYPE, "season_review"}:
+        return True
+
     name = normalize_text(entry.get("name", ""))
-    return name in {"season review", "season recap"}
+    if name in {"season review", "season recap"}:
+        return True
+    if re.match(r"^\d{4}\s+season review$", name):
+        return True
+
+    if re.search(r"\bin review\b", name):
+        return False
+
+    url = entry.get("url", "") or ""
+    if re.search(r"-season-review(?:/|$)", url) and entry.get("round") is None:
+        return True
+
+    return False
+
+
+def is_season_review_entry(entry):
+    return is_catalog_season_review(entry)
+
+
+def season_review_name(season):
+    return f"{season} Season Review"
+
+
+def normalize_season_review(entry):
+    """Normalize a season review entry to catalog conventions."""
+    if not is_catalog_season_review(entry):
+        return False
+    season = entry.get("season")
+    if season is None:
+        return False
+    entry["type"] = SEASON_REVIEW_TYPE
+    entry["name"] = season_review_name(season)
+    entry["round"] = None
+    return True
 
 
 def is_generic_race_name(name):
@@ -311,11 +371,7 @@ def location_matches_race(location, race):
 def infer_round(entry, races_by_season):
     if entry.get("round") is not None:
         return entry["round"]
-    if entry.get("type") == "season_review":
-        return None
-
-    name = normalize_text(entry.get("name", ""))
-    if name in {"season review", "season recap"}:
+    if is_catalog_season_review(entry):
         return None
 
     season = entry["season"]
@@ -356,7 +412,7 @@ def merge_entries(existing, new_entries, races_by_season=None):
     updated = 0
 
     for entry in new_entries:
-        if races_by_season and entry.get("round") is None and entry.get("type") != "season_review":
+        if races_by_season and entry.get("round") is None and not is_catalog_season_review(entry):
             inferred = infer_round(entry, races_by_season)
             if inferred is not None:
                 entry["round"] = inferred

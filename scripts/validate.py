@@ -7,7 +7,13 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog_utils import VALID_TYPES, entry_key, load_races
+from catalog_utils import (
+    SEASON_REVIEW_TYPE,
+    VALID_TYPES,
+    entry_key,
+    load_races,
+    season_review_name,
+)
 
 EXPECTED_ROUNDS = {
     2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24,
@@ -31,7 +37,15 @@ def validate(path):
         if typ not in VALID_TYPES:
             errors.append(f"[{i}] invalid type: {typ!r}")
 
-        if typ != "season_review" and e.get("round") is None:
+        if typ == SEASON_REVIEW_TYPE:
+            if e.get("round") is not None:
+                errors.append(f"[{i}] season-review must have null round: {e.get('name')!r}")
+            expected_name = season_review_name(season)
+            if e.get("name") != expected_name:
+                warnings.append(
+                    f"[{i}] season-review name should be {expected_name!r}, got {e.get('name')!r}"
+                )
+        elif e.get("round") is None:
             warnings.append(f"[{i}] missing round: {e.get('name')!r} ({typ})")
 
         if not e.get("url"):

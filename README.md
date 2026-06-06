@@ -26,13 +26,13 @@ Each region file is a flat JSON array. Every entry represents one watchable item
 ### Fields
 
 - **`season`** (integer) — Championship year. Must match the race calendar.
-- **`round`** (integer | null) — Round within the season. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season_review` may use `null`.
+- **`round`** (integer | null) — Round within the season. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season-review` may use `null`.
 - **`name`** (string) — Display label from F1TV (not used for joining).
 - **`type`** (string) — Content type. One of:
   - `"race"` — Full race replay
   - `"extended_highlights"` — Extended highlights (~25–30 min)
   - `"highlights"` — Short highlights (~5–10 min)
-  - `"season_review"` — Season review / recap
+  - `"season-review"` — Season review / recap
 - **`duration`** (string | null) — Runtime in `HH:MM:SS` format. `null` if unknown.
 - **`url`** (string) — F1TV deep link. Prefer `/detail/...` watch URLs over `/page/...` hub URLs when both exist.
 
@@ -54,7 +54,7 @@ For seasons where individual races aren't available but a season review exists:
   "season": 1985,
   "round": null,
   "name": "1985 Season Review",
-  "type": "season_review",
+  "type": "season-review",
   "duration": "01:20:00",
   "url": "https://f1tv.formula1.com/detail/..."
 }

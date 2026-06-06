@@ -6,7 +6,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog_utils import entry_key, fix_season_from_url, load_races, merge_entries
+from catalog_utils import (
+    fix_season_from_url,
+    is_feeder_series_entry,
+    load_races,
+    merge_entries,
+    normalize_season_review,
+)
 
 
 def clean(path, dry_run=False):
@@ -14,13 +20,27 @@ def clean(path, dry_run=False):
         data = json.load(f)
 
     fixed_season = 0
+    normalized_reviews = 0
+    removed_feeder = 0
+    kept = []
+    for entry in data:
+        if is_feeder_series_entry(entry):
+            removed_feeder += 1
+            continue
+        kept.append(entry)
+    data = kept
+
     for entry in data:
         before = entry.get("season")
         fix_season_from_url(entry)
         if entry.get("season") != before:
             fixed_season += 1
+        if normalize_season_review(entry):
+            normalized_reviews += 1
 
+    print(f"Removed {removed_feeder} F2/F3 entries")
     print(f"Fixed {fixed_season} truncated season values")
+    print(f"Normalized {normalized_reviews} season review entries")
 
     # Re-merge to dedupe by (season, round, type) and prefer detail URLs
     merged = []

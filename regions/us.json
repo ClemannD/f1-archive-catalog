@@ -2,88 +2,88 @@
   {
     "season": 1970,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1970 Season Review",
+    "type": "season-review",
     "duration": "00:49:54",
     "url": "https://f1tv.formula1.com/detail/1000003779/1970-season-review"
   },
   {
     "season": 1971,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1971 Season Review",
+    "type": "season-review",
     "duration": "00:52:57",
     "url": "https://f1tv.formula1.com/detail/1000003780/1971-season-review"
   },
   {
     "season": 1972,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1972 Season Review",
+    "type": "season-review",
     "duration": "00:52:23",
     "url": "https://f1tv.formula1.com/detail/1000003781/1972-season-review"
   },
   {
     "season": 1973,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1973 Season Review",
+    "type": "season-review",
     "duration": "00:52:36",
     "url": "https://f1tv.formula1.com/detail/1000003782/1973-season-review"
   },
   {
     "season": 1974,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1974 Season Review",
+    "type": "season-review",
     "duration": "00:52:30",
     "url": "https://f1tv.formula1.com/detail/1000003783/1974-season-review"
   },
   {
     "season": 1975,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1975 Season Review",
+    "type": "season-review",
     "duration": "00:52:17",
     "url": "https://f1tv.formula1.com/detail/1000003784/1975-season-review"
   },
   {
     "season": 1976,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1976 Season Review",
+    "type": "season-review",
     "duration": "00:52:04",
     "url": "https://f1tv.formula1.com/detail/1000003785/1976-season-review"
   },
   {
     "season": 1977,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1977 Season Review",
+    "type": "season-review",
     "duration": "00:51:16",
     "url": "https://f1tv.formula1.com/detail/1000003786/1977-season-review"
   },
   {
     "season": 1978,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1978 Season Review",
+    "type": "season-review",
     "duration": "00:51:38",
     "url": "https://f1tv.formula1.com/detail/1000003787/1978-season-review"
   },
   {
     "season": 1979,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1979 Season Review",
+    "type": "season-review",
     "duration": "00:50:37",
     "url": "https://f1tv.formula1.com/detail/1000003788/1979-season-review"
   },
   {
     "season": 1980,
     "round": null,
-    "name": "Season Review",
-    "type": "highlights",
+    "name": "1980 Season Review",
+    "type": "season-review",
     "duration": "00:52:06",
     "url": "https://f1tv.formula1.com/detail/1000003789/1980-season-review"
   },
@@ -4156,16 +4156,8 @@
     "round": 4,
     "name": "in Review - Italy",
     "type": "highlights",
-    "duration": "00:11:17",
-    "url": "https://f1tv.formula1.com/detail/1000001826/2002-in-review-italy"
-  },
-  {
-    "season": 2002,
-    "round": 4,
-    "name": "in Review - San Marino",
-    "type": "highlights",
     "duration": "00:11:14",
-    "url": "https://f1tv.formula1.com/detail/1000001811/2002-in-review-san-marino"
+    "url": "https://f1tv.formula1.com/detail/1000001826/2002-in-review-italy"
   },
   {
     "season": 2002,
@@ -4436,16 +4428,8 @@
     "round": 4,
     "name": "in Review - Italy",
     "type": "highlights",
-    "duration": "00:06:12",
-    "url": "https://f1tv.formula1.com/detail/1000001850/2003-in-review-italy"
-  },
-  {
-    "season": 2003,
-    "round": 4,
-    "name": "in Review - San Marino",
-    "type": "highlights",
     "duration": "00:04:54",
-    "url": "https://f1tv.formula1.com/detail/1000001835/2003-in-review-san-marino"
+    "url": "https://f1tv.formula1.com/detail/1000001850/2003-in-review-italy"
   },
   {
     "season": 2003,
@@ -4708,16 +4692,8 @@
     "round": 4,
     "name": "in Review - Italy",
     "type": "highlights",
-    "duration": "00:09:11",
-    "url": "https://f1tv.formula1.com/detail/1000001874/2004-in-review-italy"
-  },
-  {
-    "season": 2004,
-    "round": 4,
-    "name": "in Review - San Marino",
-    "type": "highlights",
     "duration": "00:12:05",
-    "url": "https://f1tv.formula1.com/detail/1000001860/2004-in-review-san-marino"
+    "url": "https://f1tv.formula1.com/detail/1000001874/2004-in-review-italy"
   },
   {
     "season": 2004,
@@ -5012,16 +4988,8 @@
     "round": 4,
     "name": "in Review - Italy",
     "type": "highlights",
-    "duration": "00:06:32",
-    "url": "https://f1tv.formula1.com/detail/1000001901/2005-in-review-italy"
-  },
-  {
-    "season": 2005,
-    "round": 4,
-    "name": "in Review - San Marino",
-    "type": "highlights",
     "duration": "00:11:38",
-    "url": "https://f1tv.formula1.com/detail/1000001883/2005-in-review-san-marino"
+    "url": "https://f1tv.formula1.com/detail/1000001901/2005-in-review-italy"
   },
   {
     "season": 2005,
@@ -5332,16 +5300,8 @@
     "round": 4,
     "name": "in Review - Italy",
     "type": "highlights",
-    "duration": "00:10:53",
-    "url": "https://f1tv.formula1.com/detail/1000001925/2006-in-review-italy"
-  },
-  {
-    "season": 2006,
-    "round": 4,
-    "name": "in Review - San Marino",
-    "type": "highlights",
     "duration": "00:11:30",
-    "url": "https://f1tv.formula1.com/detail/1000001911/2006-in-review-san-marino"
+    "url": "https://f1tv.formula1.com/detail/1000001925/2006-in-review-italy"
   },
   {
     "season": 2006,
@@ -7156,16 +7116,8 @@
     "round": 1,
     "name": "Australian Grand Prix",
     "type": "race",
-    "duration": "02:05:06",
-    "url": "https://f1tv.formula1.com/detail/1000002093/2012-australian-grand-prix"
-  },
-  {
-    "season": 2012,
-    "round": 1,
-    "name": "US Grand Prix",
-    "type": "race",
     "duration": "02:07:30",
-    "url": "https://f1tv.formula1.com/detail/1000002131/2012-us-grand-prix"
+    "url": "https://f1tv.formula1.com/detail/1000002093/2012-australian-grand-prix"
   },
   {
     "season": 2012,
@@ -7860,16 +7812,8 @@
     "round": 3,
     "name": "Bahrain Grand Prix - Rosberg's Pole Lap",
     "type": "highlights",
-    "duration": "00:01:42",
-    "url": "https://f1tv.formula1.com/detail/1000002183/2014-bahrain-grand-prix-rosberg-s-pole-lap"
-  },
-  {
-    "season": 2014,
-    "round": 3,
-    "name": "in Review - Bahrain",
-    "type": "highlights",
     "duration": "00:13:13",
-    "url": "https://f1tv.formula1.com/detail/1000002184/2014-in-review-bahrain"
+    "url": "https://f1tv.formula1.com/detail/1000002183/2014-bahrain-grand-prix-rosberg-s-pole-lap"
   },
   {
     "season": 2014,
@@ -8796,16 +8740,8 @@
     "round": 1,
     "name": "Australian Grand Prix",
     "type": "race",
-    "duration": "02:04:30",
-    "url": "https://f1tv.formula1.com/detail/1000002299/2017-australian-grand-prix"
-  },
-  {
-    "season": 2017,
-    "round": 1,
-    "name": "US Grand Prix",
-    "type": "race",
     "duration": "02:13:10",
-    "url": "https://f1tv.formula1.com/detail/1000002329/2017-us-grand-prix"
+    "url": "https://f1tv.formula1.com/detail/1000002299/2017-australian-grand-prix"
   },
   {
     "season": 2017,
@@ -9161,8 +9097,16 @@
   },
   {
     "season": 2018,
+    "round": 6,
+    "name": "MONACO Grand Prix",
+    "type": "race",
+    "duration": null,
+    "url": "https://f1tv.formula1.com/page/887/formula-1-grand-prix-de-monaco-2018"
+  },
+  {
+    "season": 2018,
     "round": 7,
-    "name": "Canadian Grand Prix",
+    "name": "CANADA Grand Prix",
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/890/formula-1-grand-prix-heineken-du-canada-2018"
@@ -9170,7 +9114,7 @@
   {
     "season": 2018,
     "round": 8,
-    "name": "French Grand Prix",
+    "name": "FRANCE Grand Prix",
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/893/formula-1-pirelli-grand-prix-de-france-2018"
@@ -9194,7 +9138,7 @@
   {
     "season": 2018,
     "round": 11,
-    "name": "Germany Grand Prix",
+    "name": "DEUTSCHLAND Grand Prix",
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/899/formula-1-emirates-grosser-preis-von-deutschland-2018"
@@ -9598,22 +9542,6 @@
     "type": "feature",
     "duration": "00:06:51",
     "url": "https://f1tv.formula1.com/detail/1000005047/the-story-of-the-2020-f1-season"
-  },
-  {
-    "season": 2020,
-    "round": null,
-    "name": "The Story of the 2020 F2 Season",
-    "type": "feature",
-    "duration": "00:12:09",
-    "url": "https://f1tv.formula1.com/detail/1000004051/the-story-of-the-2020-f2-season"
-  },
-  {
-    "season": 2020,
-    "round": null,
-    "name": "The Story of the 2020 F3 Season",
-    "type": "feature",
-    "duration": "00:10:30",
-    "url": "https://f1tv.formula1.com/detail/1000004041/the-story-of-the-2020-f3-season"
   },
   {
     "season": 2021,
@@ -10041,14 +9969,6 @@
   },
   {
     "season": 2023,
-    "round": 8,
-    "name": "FORMULA 1 AWS GRAN PREMIO DE ESPA",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6633/formula-1-aws-gran-premio-de-espana-2023"
-  },
-  {
-    "season": 2023,
     "round": 9,
     "name": "Austria Grand Prix",
     "type": "race",
@@ -10105,14 +10025,6 @@
   },
   {
     "season": 2023,
-    "round": 15,
-    "name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6651/formula-1-singapore-airlines-singapore-grand-prix-2023-"
-  },
-  {
-    "season": 2023,
     "round": 16,
     "name": "FORMULA 1 LENOVO JAPANESE GRAND PRIX",
     "type": "race",
@@ -10150,14 +10062,6 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/6663/formula-1-heineken-silver-las-vegas-grand-prix-2023"
-  },
-  {
-    "season": 2023,
-    "round": 21,
-    "name": "FORMULA 1 ROLEX GRANDE PR\u00caMIO DE S",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6661/formula-1-rolex-grande-premio-de-sao-paulo-2023"
   },
   {
     "season": 2023,
@@ -10376,22 +10280,6 @@
     "url": "https://f1tv.formula1.com/detail/1000008897/f1-live-2024-funnies"
   },
   {
-    "season": 2024,
-    "round": null,
-    "name": "F2: 2024 Season Highlights",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000008905/f2-2024-season-highlights"
-  },
-  {
-    "season": 2024,
-    "round": null,
-    "name": "F3: 2024 Season Highlights",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000008906/f3-2024-season-highlights"
-  },
-  {
     "season": 2025,
     "round": 1,
     "name": "FORMULA 1 LOUIS VUITTON AUSTRALIAN GRAND PRIX",
@@ -10590,21 +10478,5 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/detail/1000010329/f1-2025-season-highlights"
-  },
-  {
-    "season": 2025,
-    "round": null,
-    "name": "F2: 2025 Season Highlights",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000010169/f2-2025-season-highlights"
-  },
-  {
-    "season": 2025,
-    "round": null,
-    "name": "F3: 2025 Season Highlights",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000010170/f3-2025-season-highlights"
   }
 ]
