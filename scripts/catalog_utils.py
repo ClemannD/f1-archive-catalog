@@ -27,6 +27,7 @@ LOCATION_ALIASES = {
     "belgium": {"belgium", "belgian", "spa"},
     "brazil": {"brazil", "brazilian", "sao paulo"},
     "britain": {"britain", "british", "great britain", "united kingdom", "uk"},
+    "caesars palace": {"caesars palace", "caesars", "las vegas"},
     "canada": {"canada", "canadian"},
     "china": {"china", "chinese"},
     "france": {"france", "french"},
@@ -46,7 +47,7 @@ LOCATION_ALIASES = {
     "styrian": {"styrian", "steiermark", "styria"},
     "turkey": {"turkey", "turkish", "istanbul"},
     "united arab emirates": {"abu dhabi", "united arab emirates", "uae"},
-    "united states": {"united states", "us", "usa", "austin", "las vegas", "miami", "united states grand prix"},
+    "united states": {"united states", "us", "usa", "austin", "miami", "united states grand prix"},
     "vietnam": {"vietnam", "vietnamese"},
     "malaysia": {"malaysia", "malaysian"},
 }
@@ -99,12 +100,6 @@ def canonicalize_location(location):
     }
     if loc in shorthand:
         return shorthand[loc]
-
-    loc_tokens = slug_tokens(loc)
-    for canonical, aliases in LOCATION_ALIASES.items():
-        alias_tokens = slug_tokens(canonical) | aliases
-        if loc_tokens & alias_tokens:
-            return canonical
 
     return loc
 
@@ -382,7 +377,9 @@ def match_score(location, race):
         return 15
 
     for canonical, aliases in LOCATION_ALIASES.items():
-        alias_tokens = slug_tokens(canonical) | aliases
+        alias_tokens = slug_tokens(canonical)
+        for alias in aliases:
+            alias_tokens |= slug_tokens(alias)
         if loc_tokens & alias_tokens and name_tokens & alias_tokens:
             return 25
 
