@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F1TV Archive Scraper
 // @namespace    f1-archive-catalog
-// @version      1.7
+// @version      1.8
 // @description  Scrape F1TV archive pages and send data to local catalog server
 // @match        https://f1tv.formula1.com/*
 // @grant        GM_xmlhttpRequest
@@ -98,8 +98,14 @@
     return /^formula\s*1\s+(?:\d{4}\s+)?(?:pirelli\s+|rolex\s+|heineken\s+|gulf air\s+)?(grand prix|gran premio|grande pr[eê]mio)$/i.test(n);
   }
 
+  const SPONSOR_WORDS = /^(formula|grand|prix|gran|premio|heineken|pirelli|rolex|gulf|air|aws|msc|cruises|lenovo|aramco|qatar|airways|etihad|emirates|singapore|airlines|johnnie|walker|honda|vtb|eyetime|tag|heuer|stc|crypto|com|louis|vuitton)$/i;
+
   function locationFromUrl(url) {
     const slug = (url || '').split('/').pop().replace(/\?.*$/, '') || '';
+    const deLoc = slug.match(/(?:grand-prix|gran-premio|grande-premio)-(?:de|del|du|do|dell|von)-([a-z0-9]+)(?:-[a-z0-9-]+)*-\d{4}$/i);
+    if (deLoc && !SPONSOR_WORDS.test(deLoc[1])) {
+      return deLoc[1].replace(/-/g, ' ').trim();
+    }
     const patterns = [
       /(?:du|de|do|von|del|dell|osterreich|magyar|grosser)-([a-z0-9-]+)-\d{4}$/i,
       /(?:grand-prix|gran-premio|grande-premio)-(?:[a-z0-9-]+-)*([a-z0-9-]+)-\d{4}$/i,
@@ -108,9 +114,11 @@
     for (const pat of patterns) {
       const m = slug.match(pat);
       if (m) {
-        const loc = m[1].replace(/-/g, ' ').trim();
-        if (!/^(formula|grand|prix|gran|premio|heineken|pirelli|rolex|gulf|air|aws|msc|cruises|lenovo|aramco|qatar|airways|etihad|singapore|airlines|johnnie|walker|honda|vtb|eyetime|tag|heuer|stc|crypto|com|louis|vuitton|gulf)$/i.test(loc)) {
-          return loc;
+        const parts = m[1].split('-').filter(Boolean);
+        const candidates = parts.length > 1 ? [parts[parts.length - 1], parts[parts.length - 2]] : [m[1]];
+        for (const c of candidates) {
+          const loc = c.replace(/-/g, ' ').trim();
+          if (!SPONSOR_WORDS.test(loc)) return loc;
         }
       }
     }

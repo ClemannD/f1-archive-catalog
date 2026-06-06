@@ -51,11 +51,14 @@ LOCATION_ALIASES = {
     "russia": {"russia", "russian", "sochi"},
     "saudi arabia": {"saudi arabia", "saudi", "jeddah"},
     "singapore": {"singapore"},
-    "spain": {"spain", "spanish", "barcelona", "catalunya"},
+    "spain": {"spain", "spanish", "barcelona", "catalunya", "espana"},
     "styrian": {"styrian", "steiermark", "styria"},
     "turkey": {"turkey", "turkish", "istanbul"},
     "united arab emirates": {"abu dhabi", "united arab emirates", "uae"},
-    "united states": {"united states", "us", "usa", "austin", "miami", "united states grand prix"},
+    "united states": {
+        "united states", "us", "usa", "austin", "miami", "indianapolis",
+        "united states grand prix",
+    },
     "vietnam": {"vietnam", "vietnamese"},
     "malaysia": {"malaysia", "malaysian"},
 }
@@ -152,10 +155,16 @@ GENERIC_RACE_NAMES = {
 SLUG_STOPWORDS = {
     "formula", "grand", "prix", "gran", "premio", "grande",
     "heineken", "pirelli", "rolex", "gulf", "air", "aws", "msc", "cruises",
-    "lenovo", "aramco", "qatar", "airways", "etihad", "singapore", "airlines",
+    "lenovo", "aramco", "qatar", "airways", "etihad", "emirates", "singapore", "airlines",
     "johnnie", "walker", "honda", "vtb", "eyetime", "tag", "heuer", "stc",
     "crypto", "com", "louis", "vuitton", "grosser", "von", "osterreich",
     "magyar", "nagydij", "preis", "eyetime",
+}
+
+# Tokens shared across unrelated place names — must not alone link loc ↔ race via aliases.
+AMBIGUOUS_ALIAS_TOKENS = {
+    "united", "kingdom", "states", "grand", "new", "south", "north", "east", "west",
+    "city", "de", "del", "du", "do", "von", "dell", "air", "grand prix",
 }
 
 
@@ -253,6 +262,23 @@ def location_from_url_slug(url):
     if m:
         return normalize_text(m.group(2).replace("-", " "))
 
+    # formula-1-aramco-british-grand-prix-2023 / ...-united-states-grand-prix-2023
+    m = re.search(r"-([a-z0-9-]+)-grand-prix-\d{4}$", slug)
+    if m:
+        loc = normalize_text(m.group(1).replace("-", " "))
+        if slug_tokens(loc) - SLUG_STOPWORDS:
+            return loc
+
+    # gran premio de espana-emirates-2018 — location before trailing sponsor + year
+    m = re.search(
+        r"(?:grand-prix|gran-premio|grande-premio)-(?:de|del|du|do|dell|von)-([a-z0-9]+)(?:-[a-z0-9-]+)*-\d{4}$",
+        slug,
+    )
+    if m:
+        loc = normalize_text(m.group(1))
+        if slug_tokens(loc) - SLUG_STOPWORDS:
+            return loc
+
     for pat in (
         r"(?:du|de|do|von|del|dell|osterreich|magyar|grosser)-([a-z0-9-]+)-\d{4}$",
         r"(?:grand-prix|gran-premio|grande-premio)-(?:[a-z0-9-]+-)*([a-z0-9-]+)-\d{4}$",
@@ -268,6 +294,9 @@ def location_from_url_slug(url):
         tokens = slug_tokens(loc)
         if tokens and tokens - SLUG_STOPWORDS:
             return loc
+        # e.g. ...-espana-emirates-2018 — retry segment before sponsor
+        if len(parts) > 1 and slug_tokens(parts[-2]) - SLUG_STOPWORDS:
+            return normalize_text(parts[-2])
 
     return None
 
@@ -392,11 +421,20 @@ def match_score(location, race):
     if loc_tokens & country_tokens:
         return 15
 
+    circuit = normalize_text(race.get("circuit", ""))
+    circuit_tokens = slug_tokens(circuit) - generic
+    if loc_tokens & circuit_tokens:
+        return 25
+
     for canonical, aliases in LOCATION_ALIASES.items():
         alias_tokens = slug_tokens(canonical)
         for alias in aliases:
             alias_tokens |= slug_tokens(alias)
-        if loc_tokens & alias_tokens and name_tokens & alias_tokens:
+        alias_tokens -= generic | AMBIGUOUS_ALIAS_TOKENS
+        name_specific = name_tokens - generic
+        loc_hit = loc_tokens - AMBIGUOUS_ALIAS_TOKENS
+        name_hit = name_specific - AMBIGUOUS_ALIAS_TOKENS
+        if loc_hit & alias_tokens and name_hit & alias_tokens:
             return 25
 
     return 0
