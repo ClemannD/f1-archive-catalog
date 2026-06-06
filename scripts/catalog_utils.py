@@ -6,6 +6,13 @@ from pathlib import Path
 
 VALID_TYPES = {"race", "extended_highlights", "highlights", "season-review"}
 LEGACY_TYPES = {"season_review"}  # migrated to season-review on clean
+EXCLUDED_TYPES = {
+    "documentary",
+    "feature",
+    "show",
+    "race highlights",
+    "analysis",
+}
 ROUND_BOUND_TYPES = {"race", "extended_highlights", "highlights"}
 SEASON_REVIEW_TYPE = "season-review"
 
@@ -150,6 +157,12 @@ SLUG_STOPWORDS = {
     "crypto", "com", "louis", "vuitton", "grosser", "von", "osterreich",
     "magyar", "nagydij", "preis", "eyetime",
 }
+
+
+def is_excluded_content_type(entry):
+    """Non-race F1TV content (documentaries, features, etc.) — not in catalog."""
+    typ = normalize_text(entry.get("type", "") or "")
+    return typ in EXCLUDED_TYPES
 
 
 def is_feeder_series_entry(entry):

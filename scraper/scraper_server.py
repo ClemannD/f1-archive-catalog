@@ -15,7 +15,13 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.join(REPO_ROOT, "scripts"))
-from catalog_utils import is_feeder_series_entry, load_races, merge_entries
+from catalog_utils import (
+    VALID_TYPES,
+    is_excluded_content_type,
+    is_feeder_series_entry,
+    load_races,
+    merge_entries,
+)
 
 CATALOG_PATH = os.path.join(REPO_ROOT, "regions", "us.json")
 USERSCRIPT_PATH = os.path.join(os.path.dirname(__file__), "f1tv-scraper.user.js")
@@ -114,14 +120,20 @@ class Handler(BaseHTTPRequestHandler):
 
             filtered = []
             skipped_feeder = 0
+            skipped_excluded = 0
             for e in new_entries:
                 e["type"] = normalize_type(e.get("type", "race"))
                 if is_feeder_series_entry(e):
                     skipped_feeder += 1
                     continue
+                if is_excluded_content_type(e) or e["type"] not in VALID_TYPES:
+                    skipped_excluded += 1
+                    continue
                 filtered.append(e)
             if skipped_feeder:
                 print(f"  → Skipped {skipped_feeder} F2/F3 entries")
+            if skipped_excluded:
+                print(f"  → Skipped {skipped_excluded} excluded content types")
 
             catalog = load_catalog()
             catalog, added, updated = merge_entries(catalog, filtered, RACES_BY_SEASON)

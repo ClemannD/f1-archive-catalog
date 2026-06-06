@@ -460,16 +460,8 @@
     "round": 1,
     "name": "In Review: Brazilian Grand Prix",
     "type": "highlights",
-    "duration": "00:59:37",
-    "url": "https://f1tv.formula1.com/detail/1000001624/1983-in-review-brazilian-grand-prix"
-  },
-  {
-    "season": 1983,
-    "round": 1,
-    "name": "In Review: Canandian Grand Prix",
-    "type": "highlights",
     "duration": "00:58:38",
-    "url": "https://f1tv.formula1.com/detail/1000001636/1983-in-review-canandian-grand-prix"
+    "url": "https://f1tv.formula1.com/detail/1000001624/1983-in-review-brazilian-grand-prix"
   },
   {
     "season": 1983,
@@ -774,14 +766,6 @@
     "type": "highlights",
     "duration": "00:09:59",
     "url": "https://f1tv.formula1.com/detail/1000002834/1984-in-review-portuguese-grand-prix"
-  },
-  {
-    "season": 1984,
-    "round": null,
-    "name": "GREATEST RACES: Estoril 1984 - Niki Lauda",
-    "type": "documentary",
-    "duration": "00:06:27",
-    "url": "https://f1tv.formula1.com/detail/1000001505/greatest-races-estoril-1984-niki-lauda"
   },
   {
     "season": 1985,
@@ -1128,14 +1112,6 @@
     "url": "https://f1tv.formula1.com/detail/1000002885/1986-australian-grand-prix"
   },
   {
-    "season": 1986,
-    "round": null,
-    "name": "GREATEST RACES: Australia 1986 - Alain Prost",
-    "type": "documentary",
-    "duration": "00:09:25",
-    "url": "https://f1tv.formula1.com/detail/1000001508/greatest-races-australia-1986-alain-prost"
-  },
-  {
     "season": 1987,
     "round": 1,
     "name": "In Review: Brazilian Grand Prix",
@@ -1302,14 +1278,6 @@
     "type": "highlights",
     "duration": "01:00:01",
     "url": "https://f1tv.formula1.com/detail/1000002913/1987-in-review-australian-grand-prix"
-  },
-  {
-    "season": 1987,
-    "round": null,
-    "name": "GREATEST RACES: Silverstone 1987 - Nigel Mansell",
-    "type": "documentary",
-    "duration": "00:11:13",
-    "url": "https://f1tv.formula1.com/detail/1000001506/greatest-races-silverstone-1987-nigel-mansell"
   },
   {
     "season": 1988,
@@ -1814,14 +1782,6 @@
     "type": "race",
     "duration": "02:03:53",
     "url": "https://f1tv.formula1.com/detail/1000002986/1990-australian-grand-prix"
-  },
-  {
-    "season": 1990,
-    "round": null,
-    "name": "GREATEST RACES: USA 1990 - Jean Alesi",
-    "type": "documentary",
-    "duration": "00:07:26",
-    "url": "https://f1tv.formula1.com/detail/1000000548/greatest-races-usa-1990-jean-alesi"
   },
   {
     "season": 1991,
@@ -2520,14 +2480,6 @@
     "url": "https://f1tv.formula1.com/detail/1000003093/1994-in-review-australian-grand-prix"
   },
   {
-    "season": 1994,
-    "round": null,
-    "name": "GREATEST RACES: Germany 1994 - Gerhard Berger",
-    "type": "documentary",
-    "duration": "00:07:18",
-    "url": "https://f1tv.formula1.com/detail/1000001500/greatest-races-germany-1994-gerhard-berger"
-  },
-  {
     "season": 1995,
     "round": 1,
     "name": "In Review: Brazilian Grand Prix",
@@ -2754,14 +2706,6 @@
   {
     "season": 1996,
     "round": 6,
-    "name": "F1 REVISITS - Monaco 1996",
-    "type": "feature",
-    "duration": "00:08:16",
-    "url": "https://f1tv.formula1.com/detail/1000004346/f1-revisits-monaco-1996"
-  },
-  {
-    "season": 1996,
-    "round": 6,
     "name": "In Review: Monaco Grand Prix",
     "type": "highlights",
     "duration": "00:11:58",
@@ -2878,14 +2822,6 @@
     "type": "highlights",
     "duration": "00:11:59",
     "url": "https://f1tv.formula1.com/detail/1000001685/1996-in-review-japanese-grand-prix"
-  },
-  {
-    "season": 1996,
-    "round": null,
-    "name": "Monaco 1996 - Race Highlights",
-    "type": "race highlights",
-    "duration": "00:13:59",
-    "url": "https://f1tv.formula1.com/detail/1000005720/monaco-1996-race-highlights"
   },
   {
     "season": 1997,
@@ -3072,14 +3008,6 @@
     "url": "https://f1tv.formula1.com/detail/1000001713/1997-european-grand-prix"
   },
   {
-    "season": 1997,
-    "round": null,
-    "name": "GREATEST RACES: Jerez 1997 - Jacques Villeneuve",
-    "type": "documentary",
-    "duration": "00:10:36",
-    "url": "https://f1tv.formula1.com/detail/1000001526/greatest-races-jerez-1997-jacques-villeneuve"
-  },
-  {
     "season": 1998,
     "round": 1,
     "name": "in Review: Australian Grand Prix",
@@ -3222,14 +3150,6 @@
     "type": "race",
     "duration": "02:51:53",
     "url": "https://f1tv.formula1.com/detail/1000001732/1998-belgian-grand-prix"
-  },
-  {
-    "season": 1998,
-    "round": 13,
-    "name": "Belgium 1998",
-    "type": "show",
-    "duration": "00:26:15",
-    "url": "https://f1tv.formula1.com/detail/1000005253/belgium-1998"
   },
   {
     "season": 1998,
@@ -3520,30 +3440,6 @@
     "url": "https://f1tv.formula1.com/detail/1000001768/1999-japanese-grand-prix"
   },
   {
-    "season": 1999,
-    "round": null,
-    "name": "GREATEST RACES: Nurburgring 1999 - Johnny Herbert",
-    "type": "documentary",
-    "duration": "00:09:12",
-    "url": "https://f1tv.formula1.com/detail/1000001504/greatest-races-nurburgring-1999-johnny-herbert"
-  },
-  {
-    "season": 1999,
-    "round": null,
-    "name": "How the 1999 Season Was Won",
-    "type": "documentary",
-    "duration": "00:47:23",
-    "url": "https://f1tv.formula1.com/detail/1000003145/how-the-1999-season-was-won"
-  },
-  {
-    "season": 1999,
-    "round": null,
-    "name": "Europe 1999",
-    "type": "show",
-    "duration": "00:46:59",
-    "url": "https://f1tv.formula1.com/detail/1000005259/europe-1999"
-  },
-  {
     "season": 2000,
     "round": 1,
     "name": "In Review: Australian Grand Prix",
@@ -3816,14 +3712,6 @@
     "url": "https://f1tv.formula1.com/detail/1000010074/2000-malaysian-grand-prix"
   },
   {
-    "season": 2000,
-    "round": null,
-    "name": "GREATEST RACES: France 2000 - David Coulthard",
-    "type": "documentary",
-    "duration": "00:07:42",
-    "url": "https://f1tv.formula1.com/detail/1000001502/greatest-races-france-2000-david-coulthard"
-  },
-  {
     "season": 2001,
     "round": 1,
     "name": "In Review: Australian Grand Prix",
@@ -4094,14 +3982,6 @@
     "type": "race",
     "duration": "01:55:00",
     "url": "https://f1tv.formula1.com/detail/1000010008/2001-japanese-grand-prix"
-  },
-  {
-    "season": 2001,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Malaysia 2001",
-    "type": "feature",
-    "duration": "00:07:01",
-    "url": "https://f1tv.formula1.com/detail/1000007437/radio-rewind-the-story-of-malaysia-2001"
   },
   {
     "season": 2002,
@@ -4914,14 +4794,6 @@
   {
     "season": 2004,
     "round": null,
-    "name": "ALL THE ANGLES: Montoya and Schumacher, Imola 2004",
-    "type": "feature",
-    "duration": "00:03:13",
-    "url": "https://f1tv.formula1.com/detail/1000004180/all-the-angles-montoya-and-schumacher-imola-2004"
-  },
-  {
-    "season": 2004,
-    "round": null,
     "name": "in Review - Indianapolis",
     "type": "highlights",
     "duration": "00:08:31",
@@ -5240,14 +5112,6 @@
     "url": "https://f1tv.formula1.com/detail/1000001892/2005-in-review-indianapolis"
   },
   {
-    "season": 2005,
-    "round": null,
-    "name": "BEST ONBOARDS: 2005 Japanese Grand Prix",
-    "type": "race highlights",
-    "duration": "00:08:13",
-    "url": "https://f1tv.formula1.com/detail/1000001353/best-onboards-2005-japanese-grand-prix"
-  },
-  {
     "season": 2006,
     "round": 1,
     "name": "in Review - Bahrain",
@@ -5522,30 +5386,6 @@
   {
     "season": 2006,
     "round": null,
-    "name": "Lewis Hamilton - Turkey 2006 Rewatch",
-    "type": "feature",
-    "duration": "00:11:28",
-    "url": "https://f1tv.formula1.com/detail/1000003680/lewis-hamilton-turkey-2006-rewatch"
-  },
-  {
-    "season": 2006,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Hungary 2006",
-    "type": "feature",
-    "duration": "00:09:45",
-    "url": "https://f1tv.formula1.com/detail/1000006676/radio-rewind-the-story-of-hungary-2006"
-  },
-  {
-    "season": 2006,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Turkey 2006",
-    "type": "feature",
-    "duration": "00:07:14",
-    "url": "https://f1tv.formula1.com/detail/1000006679/radio-rewind-the-story-of-turkey-2006"
-  },
-  {
-    "season": 2006,
-    "round": null,
     "name": "in Review - Indianapolis",
     "type": "highlights",
     "duration": "00:06:38",
@@ -5810,30 +5650,6 @@
   {
     "season": 2007,
     "round": null,
-    "name": "GREATEST RACES: Nurburgring 2007 - Fernando Alonso",
-    "type": "documentary",
-    "duration": "00:07:51",
-    "url": "https://f1tv.formula1.com/detail/1000001499/greatest-races-nurburgring-2007-fernando-alonso"
-  },
-  {
-    "season": 2007,
-    "round": null,
-    "name": "How the 2007 Season Was Won",
-    "type": "documentary",
-    "duration": "00:47:32",
-    "url": "https://f1tv.formula1.com/detail/1000003146/how-the-2007-season-was-won"
-  },
-  {
-    "season": 2007,
-    "round": null,
-    "name": "Pre-Race Show Extra: Echoes of 2007",
-    "type": "feature",
-    "duration": "00:03:50",
-    "url": "https://f1tv.formula1.com/detail/1000010001/pre-race-show-extra-echoes-of-2007"
-  },
-  {
-    "season": 2007,
-    "round": null,
     "name": "in Review - Indianapolis",
     "type": "highlights",
     "duration": "00:10:08",
@@ -5926,14 +5742,6 @@
     "type": "race",
     "duration": "02:03:35",
     "url": "https://f1tv.formula1.com/detail/1000003652/2008-turkish-grand-prix"
-  },
-  {
-    "season": 2008,
-    "round": 6,
-    "name": "JOLYON PALMER'S ANALYSIS - Looking back at the 2008 Monaco Grand Prix",
-    "type": "analysis",
-    "duration": "00:27:01",
-    "url": "https://f1tv.formula1.com/detail/1000007138/jolyon-palmer-s-analysis-looking-back-at-the-2008-monaco-grand-prix"
   },
   {
     "season": 2008,
@@ -6158,14 +5966,6 @@
     "type": "highlights",
     "duration": "00:11:13",
     "url": "https://f1tv.formula1.com/detail/1000001970/2008-in-review-valencia"
-  },
-  {
-    "season": 2008,
-    "round": null,
-    "name": "BEST ONBOARDS: 2008 British Grand Prix",
-    "type": "race highlights",
-    "duration": "00:12:36",
-    "url": "https://f1tv.formula1.com/detail/1000001965/best-onboards-2008-british-grand-prix"
   },
   {
     "season": 2009,
@@ -6738,22 +6538,6 @@
   {
     "season": 2010,
     "round": null,
-    "name": "RADIO REWIND: The Story of Abu Dhabi 2010",
-    "type": "feature",
-    "duration": "00:10:54",
-    "url": "https://f1tv.formula1.com/detail/1000006035/radio-rewind-the-story-of-abu-dhabi-2010"
-  },
-  {
-    "season": 2010,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Australia 2010",
-    "type": "feature",
-    "duration": "00:07:02",
-    "url": "https://f1tv.formula1.com/detail/1000003191/radio-rewind-the-story-of-australia-2010"
-  },
-  {
-    "season": 2010,
-    "round": null,
     "name": "in Review - Valencia",
     "type": "highlights",
     "duration": "00:09:27",
@@ -7064,46 +6848,6 @@
     "url": "https://f1tv.formula1.com/detail/1000002091/2011-brazilian-grand-prix"
   },
   {
-    "season": 2011,
-    "round": null,
-    "name": "GREATEST RACES: Canada 2011 - Jenson Button",
-    "type": "documentary",
-    "duration": "00:11:55",
-    "url": "https://f1tv.formula1.com/detail/1000000547/greatest-races-canada-2011-jenson-button"
-  },
-  {
-    "season": 2011,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Canada 2011",
-    "type": "feature",
-    "duration": "00:08:01",
-    "url": "https://f1tv.formula1.com/detail/1000001803/radio-rewind-the-story-of-canada-2011"
-  },
-  {
-    "season": 2011,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Hungary 2011",
-    "type": "feature",
-    "duration": "00:06:28",
-    "url": "https://f1tv.formula1.com/detail/1000006678/radio-rewind-the-story-of-hungary-2011"
-  },
-  {
-    "season": 2011,
-    "round": null,
-    "name": "BEST ONBOARDS: 2011 Canadian Grand Prix",
-    "type": "race highlights",
-    "duration": "00:12:55",
-    "url": "https://f1tv.formula1.com/detail/1000001448/best-onboards-2011-canadian-grand-prix"
-  },
-  {
-    "season": 2011,
-    "round": null,
-    "name": "BEST ONBOARDS: 2011 Hungarian Grand Prix",
-    "type": "race highlights",
-    "duration": "00:12:35",
-    "url": "https://f1tv.formula1.com/detail/1000001464/best-onboards-2011-hungarian-grand-prix"
-  },
-  {
     "season": 2012,
     "round": 1,
     "name": "in Review - Australia",
@@ -7410,58 +7154,10 @@
   {
     "season": 2012,
     "round": null,
-    "name": "How the 2012 Season Was Won",
-    "type": "documentary",
-    "duration": "00:47:45",
-    "url": "https://f1tv.formula1.com/detail/1000003147/how-the-2012-season-was-won"
-  },
-  {
-    "season": 2012,
-    "round": null,
-    "name": "RADIO REWIND: The Story of Malaysia 2012",
-    "type": "feature",
-    "duration": "00:08:07",
-    "url": "https://f1tv.formula1.com/detail/1000006680/radio-rewind-the-story-of-malaysia-2012"
-  },
-  {
-    "season": 2012,
-    "round": null,
     "name": "in Review - Valencia",
     "type": "highlights",
     "duration": "00:13:58",
     "url": "https://f1tv.formula1.com/detail/1000002106/2012-in-review-valencia"
-  },
-  {
-    "season": 2012,
-    "round": null,
-    "name": "BEST ONBOARDS: 2012 Brazilian Grand Prix",
-    "type": "race highlights",
-    "duration": "00:17:12",
-    "url": "https://f1tv.formula1.com/detail/1000001779/best-onboards-2012-brazilian-grand-prix"
-  },
-  {
-    "season": 2012,
-    "round": null,
-    "name": "BEST ONBOARDS: 2012 European Grand Prix",
-    "type": "race highlights",
-    "duration": "00:12:45",
-    "url": "https://f1tv.formula1.com/detail/1000003195/best-onboards-2012-european-grand-prix"
-  },
-  {
-    "season": 2012,
-    "round": null,
-    "name": "Spain 2012 - Race Highlights",
-    "type": "race highlights",
-    "duration": "00:07:47",
-    "url": "https://f1tv.formula1.com/detail/1000005719/spain-2012-race-highlights"
-  },
-  {
-    "season": 2012,
-    "round": null,
-    "name": "Europe 2012",
-    "type": "show",
-    "duration": "00:43:16",
-    "url": "https://f1tv.formula1.com/detail/1000005257/europe-2012"
   },
   {
     "season": 2013,
@@ -8720,14 +8416,6 @@
     "url": "https://f1tv.formula1.com/detail/1000002297/2016-abu-dhabi-grand-prix"
   },
   {
-    "season": 2016,
-    "round": null,
-    "name": "BEST ONBOARDS: 2016 Brazilian Grand Prix",
-    "type": "race highlights",
-    "duration": "00:09:50",
-    "url": "https://f1tv.formula1.com/detail/1000001854/best-onboards-2016-brazilian-grand-prix"
-  },
-  {
     "season": 2017,
     "round": 1,
     "name": "in Review - Australia",
@@ -9056,14 +8744,6 @@
     "url": "https://f1tv.formula1.com/detail/1000002334/2017-abu-dhabi-grand-prix"
   },
   {
-    "season": 2017,
-    "round": null,
-    "name": "INSIDE TRACKS: Azerbaijan 2017",
-    "type": "documentary",
-    "duration": "00:24:04",
-    "url": "https://f1tv.formula1.com/detail/1000001781/inside-tracks-azerbaijan-2017"
-  },
-  {
     "season": 2018,
     "round": 1,
     "name": "FORMULA 1 2018 ROLEX AUSTRALIAN GRAND PRIX",
@@ -9198,14 +8878,6 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/886/formula-1-gran-premio-de-espana-emirates-2018"
-  },
-  {
-    "season": 2018,
-    "round": 18,
-    "name": "FORMULA 1 PIRELLI 2018 UNITED STATES GRAND PRIX",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/916/formula-1-pirelli-2018-united-states-grand-prix"
   },
   {
     "season": 2018,
@@ -9400,30 +9072,6 @@
     "url": "https://f1tv.formula1.com/page/874/formula-1-etihad-airways-abu-dhabi-grand-prix-2019"
   },
   {
-    "season": 2019,
-    "round": null,
-    "name": "The Story Of The 2019 Season",
-    "type": "highlights",
-    "duration": "00:06:12",
-    "url": "https://f1tv.formula1.com/detail/1000003133/the-story-of-the-2019-season"
-  },
-  {
-    "season": 2019,
-    "round": null,
-    "name": "Top 10 Best Onboards of 2019",
-    "type": "highlights",
-    "duration": "00:10:37",
-    "url": "https://f1tv.formula1.com/detail/1000001501/top-10-best-onboards-of-2019"
-  },
-  {
-    "season": 2019,
-    "round": null,
-    "name": "Top 10 Overtakes of 2019",
-    "type": "highlights",
-    "duration": "00:05:12",
-    "url": "https://f1tv.formula1.com/detail/1000003228/top-10-overtakes-of-2019"
-  },
-  {
     "season": 2020,
     "round": 1,
     "name": "ROLEX GROSSER PREIS VON \u00d6STERREICH",
@@ -9558,14 +9206,6 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/693/formula-1-etihad-airways-abu-dhabi-grand-prix-2020"
-  },
-  {
-    "season": 2020,
-    "round": null,
-    "name": "The Story of the 2020 F1 Season",
-    "type": "feature",
-    "duration": "00:06:51",
-    "url": "https://f1tv.formula1.com/detail/1000005047/the-story-of-the-2020-f1-season"
   },
   {
     "season": 2021,
@@ -9920,30 +9560,6 @@
     "url": "https://f1tv.formula1.com/page/4379/formula-1-etihad-airways-abu-dhabi-grand-prix-2022"
   },
   {
-    "season": 2022,
-    "round": null,
-    "name": "2022: Top 10 Best Battles",
-    "type": "feature",
-    "duration": "00:08:53",
-    "url": "https://f1tv.formula1.com/detail/1000006392/2022-top-10-best-battles"
-  },
-  {
-    "season": 2022,
-    "round": null,
-    "name": "2022: Top 10 Dramatic Moments",
-    "type": "feature",
-    "duration": "00:12:04",
-    "url": "https://f1tv.formula1.com/detail/1000006382/2022-top-10-dramatic-moments"
-  },
-  {
-    "season": 2022,
-    "round": null,
-    "name": "TOP 10 ONBOARDS - The 2022 Season",
-    "type": "race highlights",
-    "duration": "00:15:13",
-    "url": "https://f1tv.formula1.com/detail/1000006391/top-10-onboards-the-2022-season"
-  },
-  {
     "season": 2023,
     "round": 1,
     "name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX",
@@ -10017,14 +9633,6 @@
   },
   {
     "season": 2023,
-    "round": 10,
-    "name": "ROLEX GROSSER PREIS VON \u00d6STERREICH",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6638/formula-1-rolex-grosser-preis-von-osterreich-2023"
-  },
-  {
-    "season": 2023,
     "round": 12,
     "name": "FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX",
     "type": "race",
@@ -10057,14 +9665,6 @@
   },
   {
     "season": 2023,
-    "round": 15,
-    "name": "PIRELLI GRAN PREMIO D\u2019ITALIA",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6649/formula-1-pirelli-gran-premio-d-italia-2023-"
-  },
-  {
-    "season": 2023,
     "round": 16,
     "name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX",
     "type": "race",
@@ -10089,14 +9689,6 @@
   },
   {
     "season": 2023,
-    "round": 18,
-    "name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6655/formula-1-qatar-airways-qatar-grand-prix-2023"
-  },
-  {
-    "season": 2023,
     "round": 19,
     "name": "FORMULA 1 ARAMCO BRITISH GRAND PRIX",
     "type": "race",
@@ -10107,14 +9699,6 @@
     "season": 2023,
     "round": 20,
     "name": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE M",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6659/formula-1-gran-premio-de-la-ciudad-de-mexico-2023"
-  },
-  {
-    "season": 2023,
-    "round": 20,
-    "name": "GRAN PREMIO DE LA CIUDAD DE M",
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/6659/formula-1-gran-premio-de-la-ciudad-de-mexico-2023"
@@ -10142,22 +9726,6 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/6665/formula-1-etihad-airways-abu-dhabi-grand-prix-2023-"
-  },
-  {
-    "season": 2023,
-    "round": null,
-    "name": "FORMULA 1 QATAR AIRWAYS GRAN PREMIO DEL MADE IN ITALY E DELL'EMILIA-ROMAGNA 2023",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6629/formula-1-qatar-airways-gran-premio-del-made-in-italy-e-dell-emilia-romagna-2023"
-  },
-  {
-    "season": 2023,
-    "round": null,
-    "name": "MADE IN ITALY E DELL'EMILIA-ROMAGNA Grand Prix",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/page/6629/formula-1-qatar-airways-gran-premio-del-made-in-italy-e-dell-emilia-romagna-2023"
   },
   {
     "season": 2024,
@@ -10352,22 +9920,6 @@
     "url": "https://f1tv.formula1.com/page/8193/formula-1-etihad-airways-abu-dhabi-grand-prix-2024"
   },
   {
-    "season": 2024,
-    "round": null,
-    "name": "F1 2024",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000008898/f1-2024"
-  },
-  {
-    "season": 2024,
-    "round": null,
-    "name": "F1 Live 2024 - Funnies",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000008897/f1-live-2024-funnies"
-  },
-  {
     "season": 2025,
     "round": 1,
     "name": "FORMULA 1 LOUIS VUITTON AUSTRALIAN GRAND PRIX",
@@ -10558,13 +10110,5 @@
     "type": "race",
     "duration": null,
     "url": "https://f1tv.formula1.com/page/10492/formula-1-etihad-airways-abu-dhabi-grand-prix-2025-"
-  },
-  {
-    "season": 2025,
-    "round": null,
-    "name": "F1: 2025 Season Highlights",
-    "type": "race",
-    "duration": null,
-    "url": "https://f1tv.formula1.com/detail/1000010329/f1-2025-season-highlights"
   }
 ]

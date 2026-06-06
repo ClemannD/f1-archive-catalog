@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from catalog_utils import (
     fix_season_from_url,
+    is_excluded_content_type,
     is_feeder_series_entry,
     load_races,
     merge_entries,
@@ -22,10 +23,14 @@ def clean(path, dry_run=False):
     fixed_season = 0
     normalized_reviews = 0
     removed_feeder = 0
+    removed_excluded = 0
     kept = []
     for entry in data:
         if is_feeder_series_entry(entry):
             removed_feeder += 1
+            continue
+        if is_excluded_content_type(entry):
+            removed_excluded += 1
             continue
         kept.append(entry)
     data = kept
@@ -39,6 +44,7 @@ def clean(path, dry_run=False):
             normalized_reviews += 1
 
     print(f"Removed {removed_feeder} F2/F3 entries")
+    print(f"Removed {removed_excluded} excluded content types (documentary, feature, show, etc.)")
     print(f"Fixed {fixed_season} truncated season values")
     print(f"Normalized {normalized_reviews} season review entries")
 

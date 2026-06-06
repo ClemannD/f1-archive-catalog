@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F1TV Archive Scraper
 // @namespace    f1-archive-catalog
-// @version      1.6
+// @version      1.7
 // @description  Scrape F1TV archive pages and send data to local catalog server
 // @match        https://f1tv.formula1.com/*
 // @grant        GM_xmlhttpRequest
@@ -31,6 +31,16 @@
     'season review': 'season-review',
     'season recap': 'season-review',
   };
+
+  const EXCLUDED_TYPES = new Set([
+    'documentary',
+    'feature',
+    'show',
+    'race highlights',
+    'analysis',
+  ]);
+
+  const VALID_TYPES = new Set(['race', 'extended_highlights', 'highlights', 'season-review']);
 
   function isFeederSeries(title, url) {
     const t = (title || '').trim();
@@ -65,6 +75,8 @@
       if (parts.length >= 1 && /^\d{2}:\d{2}:\d{2}$/.test(parts[0])) duration = parts[0];
       if (parts.length >= 2) type = TYPE_MAP[parts[parts.length - 1].toLowerCase()] || parts[parts.length - 1].toLowerCase();
     }
+
+    if (EXCLUDED_TYPES.has(type) || !VALID_TYPES.has(type)) return null;
 
     if (type === 'season-review') {
       return { season, round: null, name: season + ' Season Review', type, duration, url };
