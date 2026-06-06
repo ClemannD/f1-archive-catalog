@@ -82,6 +82,6 @@ if __name__ == "__main__":
     reconcile = "--reconcile" in args
     fix_names = "--fix-names" in args
     args = [a for a in args if a not in ("--dry-run", "--force", "--reconcile", "--fix-names")]
-    path = args[0] if args else "regions/us.json"
+    path = args[0] if args else "f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json"
     races_path = args[1] if len(args) > 1 else None
     enrich(path, races_path, dry_run=dry_run, force=force, reconcile=reconcile, fix_names=fix_names)

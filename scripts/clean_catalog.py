@@ -72,5 +72,5 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     dry_run = "--dry-run" in args
     args = [a for a in args if a != "--dry-run"]
-    path = args[0] if args else "regions/us.json"
+    path = args[0] if args else "f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json"
     clean(path, dry_run=dry_run)

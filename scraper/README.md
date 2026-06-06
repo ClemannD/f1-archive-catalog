@@ -1,6 +1,6 @@
 # F1TV Archive Scraper
 
-Tools for scraping F1TV archive pages into the regional catalog (`regions/us.json`).
+Tools for scraping F1TV archive pages into the regional catalog (`f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json`).
 
 ## What you need
 
@@ -35,7 +35,7 @@ From the repo root:
 python3 scraper/scraper_server.py
 ```
 
-The server listens on **http://localhost:8484** and writes scraped data to `regions/us.json`.
+The server listens on **http://localhost:8484** and writes scraped data to `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json`.
 
 Leave this terminal open while scraping.
 
@@ -67,9 +67,9 @@ The scraper scrolls through virtualized lists and collects each card by unique U
 Run validation and cleanup from the repo root:
 
 ```bash
-python3 scripts/clean_catalog.py regions/us.json
-python3 scripts/enrich_rounds.py regions/us.json --reconcile --fix-names
-python3 scripts/validate.py regions/us.json
+python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
+python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
 ```
 
 ## Server endpoints
@@ -77,7 +77,7 @@ python3 scripts/validate.py regions/us.json
 | Endpoint | Description |
 |----------|-------------|
 | `GET /` | Status page with catalog stats |
-| `GET /current` | Raw `regions/us.json` contents |
+| `GET /current` | Raw `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` contents |
 | `GET /script` | Userscript file |
 | `POST /add` | Accepts a JSON array of catalog entries |
 
@@ -89,6 +89,6 @@ python3 scripts/validate.py regions/us.json
 
 **Wrong round or generic name** (e.g. Canada stored as R6 "FORMULA 1 GRAND PRIX") — update to v1.5+, re-scrape the season listing, then run `enrich_rounds.py --reconcile --fix-names`. v1.5 uses the country label and URL slug when titles use French word order (`GRAND PRIX ... DU CANADA`), merges duplicate href captures from virtualization, and scrolls wall lists in smaller steps.
 
-**`season: 20` instead of `2025`** — update to userscript v1.3+. Run `python3 scripts/clean_catalog.py regions/us.json` to repair existing data.
+**`season: 20` instead of `2025`** — update to userscript v1.3+. Run `python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` to repair existing data.
 
 **Tampermonkey not firing** — check the extension is enabled, the script matches `https://f1tv.formula1.com/*`, and `localhost` is allowed under `@connect`.

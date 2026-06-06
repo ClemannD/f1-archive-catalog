@@ -4,9 +4,7 @@ An open-source, community-maintained catalog of what Formula 1 race content is a
 
 ## Why
 
-F1TV's archive varies by region and content type. Some races have full replays, others only have extended highlights or appear in a season review. There's no public API for this information. This repo aims to be a structured, machine-readable reference.
-
-Primary consumer: [f1-rewatch](https://github.com/) — links each race to available F1TV content by `season` + `round`.
+F1TV's archive varies by region and content type. Some races have full replays, others only have extended highlights or appear in a season review. There's no public API for this information. This repo is a structured, machine-readable reference you can join to [`calendar/f1-all-time-race-list.json`](calendar/f1-all-time-race-list.json) on `season` + `round`.
 
 ## Schema
 
@@ -26,7 +24,7 @@ Each region file is a flat JSON array. Every entry represents one watchable item
 ### Fields
 
 - **`season`** (integer) — Championship year. Must match the race calendar.
-- **`round`** (integer | null) — Official FIA championship round number. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season-review` may use `null`. Round numbers may have gaps when a scheduled race was cancelled (e.g. 2023 has no round 6 — Emilia Romagna). Sourced from f1-rewatch `Races.json`, not F1TV's UI badges.
+- **`round`** (integer | null) — Official FIA championship round number. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season-review` may use `null`. Round numbers may have gaps when a scheduled race was cancelled (e.g. 2023 has no round 6 — Emilia Romagna). Sourced from [`calendar/f1-all-time-race-list.json`](calendar/f1-all-time-race-list.json), not F1TV's UI badges.
 - **`name`** (string) — Display label from F1TV (not used for joining).
 - **`type`** (string) — Content type. One of:
   - `"race"` — Full race replay
@@ -68,13 +66,19 @@ Browse the catalog in your browser:
 python3 -m http.server 8080
 ```
 
-Open [http://localhost:8080/viewer/](http://localhost:8080/viewer/). You can also use the file picker on that page to load `regions/us.json` directly.
+Open [http://localhost:8080/viewer/](http://localhost:8080/viewer/). You can also use the file picker on that page to load `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` directly.
+
+## Calendar
+
+Official FIA race calendar used for round assignment and validation:
+
+- [`calendar/f1-all-time-race-list.json`](calendar/f1-all-time-race-list.json) — championship races by `season` + `round` (gaps allowed for cancelled races)
 
 ## Regions
 
-Each region has its own file under `regions/`:
+Each region has its own file under `f1-tv-archive-catalogs-by-region/`:
 
-- `regions/us.json` — United States
+- `f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json` — United States
 
 More regions welcome via PR.
 
@@ -91,26 +95,16 @@ Then install `scraper/f1tv-scraper.user.js` in Tampermonkey and scrape pages on 
 ### Post-processing
 
 ```bash
-python3 scripts/clean_catalog.py regions/us.json
-python3 scripts/enrich_rounds.py regions/us.json --reconcile --fix-names
-python3 scripts/validate.py regions/us.json
+python3 scripts/clean_catalog.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
+python3 scripts/enrich_rounds.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json --reconcile --fix-names
+python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
 ```
-
-## Copying to f1-rewatch
-
-When the catalog is ready for the app:
-
-```bash
-cp regions/us.json /path/to/f1-rewatch/F1Rewatch/Resources/F1TVCatalog.json
-```
-
-Rebuild the iOS app. See f1-rewatch README for details.
 
 ## Contributing
 
 1. Fork the repo
 2. Add or update entries in the appropriate region file
-3. Run `python3 scripts/validate.py regions/us.json`
+3. Run `python3 scripts/validate.py f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json`
 4. Open a PR with a brief description of what changed
 
 Durations can be added incrementally — `null` is fine as a placeholder. `url` should be present for all new entries.

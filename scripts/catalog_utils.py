@@ -16,14 +16,8 @@ EXCLUDED_TYPES = {
 ROUND_BOUND_TYPES = {"race", "extended_highlights", "highlights"}
 SEASON_REVIEW_TYPE = "season-review"
 
-DEFAULT_RACES_PATH = (
-    Path(__file__).resolve().parents[2].parent
-    / "_apps"
-    / "f1-rewatch"
-    / "F1Rewatch"
-    / "Resources"
-    / "Races.json"
-)
+REPO_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_RACES_PATH = REPO_ROOT / "calendar" / "f1-all-time-race-list.json"
 
 # Aliases for matching F1TV titles to race calendar entries
 LOCATION_ALIASES = {

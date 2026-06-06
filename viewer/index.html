@@ -204,7 +204,7 @@
 <body>
   <header>
     <h1>F1 Archive Catalog <span>US</span></h1>
-    <p class="subtitle">Browse <code>regions/us.json</code></p>
+    <p class="subtitle">Browse <code>f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json</code></p>
     <div class="toolbar">
       <input type="search" id="search" placeholder="Search name or URL…" disabled>
       <select id="typeFilter" disabled>
@@ -234,7 +234,7 @@
     let allEntries = [];
 
     async function loadCatalog() {
-      const paths = ['../regions/us.json', '/regions/us.json', 'regions/us.json'];
+      const paths = ['../f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json', '/f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json', 'f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json'];
       for (const path of paths) {
         try {
           const res = await fetch(path);
@@ -251,7 +251,7 @@
           <p>Could not load JSON automatically (browser blocks local file fetch).</p>
           <p>Run from repo root: <code>python3 -m http.server 8080</code><br>
              then open <code>http://localhost:8080/viewer/</code></p>
-          <label class="file-btn">Choose regions/us.json
+          <label class="file-btn">Choose f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
             <input type="file" accept=".json,application/json">
           </label>
         </div>`;

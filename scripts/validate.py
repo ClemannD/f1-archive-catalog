@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate catalog JSON before copying to f1-rewatch."""
+"""Validate catalog JSON structure and completeness."""
 
 import json
 import sys
@@ -15,7 +15,7 @@ from catalog_utils import (
     season_review_name,
 )
 
-# Seasons to check against Races.json (official FIA round numbers, gaps allowed).
+# Seasons to check against f1-all-time-race-list.json (official FIA round numbers, gaps allowed).
 CHECK_SEASONS = (2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025)
 
 
@@ -92,6 +92,6 @@ def validate(path):
 
 
 if __name__ == "__main__":
-    path = sys.argv[1] if len(sys.argv) > 1 else "regions/us.json"
+    path = sys.argv[1] if len(sys.argv) > 1 else "f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json"
     ok = validate(path)
     sys.exit(0 if ok else 1)

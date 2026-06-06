@@ -2,7 +2,7 @@
 """
 Local ingest server for F1TV archive scraper.
 
-- POST /add       — accepts JSON array of scraped entries, merges into regions/us.json
+- POST /add       — accepts JSON array of scraped entries, merges into f1-tv-archive-catalogs-by-region/US-f1-tv-archive-catalog.json
 - GET  /current   — returns current catalog contents
 - GET  /script    — returns the Tampermonkey userscript
 - GET  /           — status page
@@ -23,7 +23,7 @@ from catalog_utils import (
     merge_entries,
 )
 
-CATALOG_PATH = os.path.join(REPO_ROOT, "regions", "us.json")
+CATALOG_PATH = os.path.join(REPO_ROOT, "f1-tv-archive-catalogs-by-region", "US-f1-tv-archive-catalog.json")
 USERSCRIPT_PATH = os.path.join(os.path.dirname(__file__), "f1tv-scraper.user.js")
 RACES_BY_SEASON = load_races()
 
