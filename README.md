@@ -26,7 +26,7 @@ Each region file is a flat JSON array. Every entry represents one watchable item
 ### Fields
 
 - **`season`** (integer) — Championship year. Must match the race calendar.
-- **`round`** (integer | null) — Round within the season. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season-review` may use `null`.
+- **`round`** (integer | null) — Official FIA championship round number. **Required** for race-bound content (`race`, `extended_highlights`, `highlights`). Only `season-review` may use `null`. Round numbers may have gaps when a scheduled race was cancelled (e.g. 2023 has no round 6 — Emilia Romagna). Sourced from f1-rewatch `Races.json`, not F1TV's UI badges.
 - **`name`** (string) — Display label from F1TV (not used for joining).
 - **`type`** (string) — Content type. One of:
   - `"race"` — Full race replay

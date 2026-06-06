@@ -33,9 +33,10 @@ LOCATION_ALIASES = {
     "france": {"france", "french"},
     "germany": {"germany", "german", "hockenheim", "nurburgring", "eifel"},
     "hungary": {"hungary", "hungarian"},
+    "emilia romagna": {"emilia romagna", "emilia", "romagna", "imola"},
     "italy": {"italy", "italian", "monza"},
     "japan": {"japan", "japanese", "suzuka"},
-    "mexico": {"mexico", "mexican", "mexico city"},
+    "mexico": {"mexico", "mexican", "mexico city", "ciudad de mexico"},
     "monaco": {"monaco"},
     "netherlands": {"netherlands", "dutch", "zandvoort"},
     "portugal": {"portugal", "portuguese"},
@@ -274,6 +275,10 @@ def infer_location_from_entry(entry):
     if m:
         return normalize_text(m.group(1))
 
+    from_slug = location_from_url_slug(url)
+    if from_slug:
+        return canonicalize_location(from_slug)
+
     m = re.search(
         r"\b(?:du|de|do|d'|del|dell'|von)\s+([\w\s.'-]+?)(?:\s+\d{4})?\s*$",
         name,
@@ -281,12 +286,8 @@ def infer_location_from_entry(entry):
     )
     if m:
         place = normalize_text(m.group(1))
-        if place not in {"heineken", "pirelli", "rolex", "formula"}:
+        if place not in {"heineken", "pirelli", "rolex", "formula"} and len(place) > 2:
             return place
-
-    from_slug = location_from_url_slug(url)
-    if from_slug:
-        return canonicalize_location(from_slug)
 
     gp = re.search(r"([a-z\s]+)\s+grand prix", name, re.I)
     if gp:
@@ -315,6 +316,8 @@ def reconcile_round(entry, races_by_season):
     """Re-infer round from URL/name when the stored round looks wrong."""
     if entry.get("type") != "race":
         return entry.get("round")
+    if is_cancelled_race_entry(entry):
+        return None
 
     probe = dict(entry)
     probe["round"] = None
@@ -390,10 +393,22 @@ def location_matches_race(location, race):
     return match_score(location, race) >= 15
 
 
+def is_cancelled_race_entry(entry):
+    """Races on the calendar that did not run — no catalog round assignment."""
+    season = entry.get("season")
+    url = (entry.get("url") or "").lower()
+    name = normalize_text(entry.get("name", ""))
+    if season == 2023 and ("emilia-romagna" in url or "emilia romagna" in name):
+        return True
+    return False
+
+
 def infer_round(entry, races_by_season):
     if entry.get("round") is not None:
         return entry["round"]
     if is_catalog_season_review(entry):
+        return None
+    if is_cancelled_race_entry(entry):
         return None
 
     season = entry["season"]

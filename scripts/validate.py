@@ -15,9 +15,8 @@ from catalog_utils import (
     season_review_name,
 )
 
-EXPECTED_ROUNDS = {
-    2018: 21, 2019: 21, 2020: 17, 2021: 22, 2022: 22, 2023: 22, 2024: 24, 2025: 24,
-}
+# Seasons to check against Races.json (official FIA round numbers, gaps allowed).
+CHECK_SEASONS = (2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025)
 
 
 def validate(path):
@@ -58,16 +57,22 @@ def validate(path):
             errors.append(f"duplicate key {key}: entries {indices}")
 
     races = load_races()
-    for year, expected in EXPECTED_ROUNDS.items():
-        rounds = {
+    for year in CHECK_SEASONS:
+        season_races = races.get(year, [])
+        if not season_races:
+            continue
+        official_rounds = {r["round"] for r in season_races}
+        catalog_rounds = {
             e["round"]
             for e in data
             if e["season"] == year and e.get("round") and e.get("type") == "race"
         }
-        if races.get(year) and len(rounds) < expected:
-            missing = [r for r in range(1, expected + 1) if r not in rounds]
-            if missing:
-                warnings.append(f"{year}: missing race rounds {missing} ({len(rounds)}/{expected})")
+        missing = sorted(official_rounds - catalog_rounds)
+        if missing:
+            warnings.append(
+                f"{year}: missing race rounds {missing} "
+                f"({len(catalog_rounds)}/{len(official_rounds)} official rounds)"
+            )
 
     print(f"Validated {len(data)} entries in {path}")
     print(f"  Errors:   {len(errors)}")

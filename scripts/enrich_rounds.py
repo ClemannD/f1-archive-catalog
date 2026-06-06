@@ -10,6 +10,7 @@ from catalog_utils import (
     ROUND_BOUND_TYPES,
     canonical_race_name,
     infer_round,
+    is_cancelled_race_entry,
     is_generic_race_name,
     is_season_review_entry,
     load_races,
@@ -30,6 +31,12 @@ def enrich(path, races_path=None, dry_run=False, force=False, reconcile=False, f
         if entry.get("type") not in ROUND_BOUND_TYPES:
             continue
         if is_season_review_entry(entry):
+            continue
+
+        if is_cancelled_race_entry(entry):
+            if entry.get("round") is not None:
+                entry["round"] = None
+                reconciled += 1
             continue
 
         if reconcile and entry.get("type") == "race":
