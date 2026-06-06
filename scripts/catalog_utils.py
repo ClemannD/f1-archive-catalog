@@ -85,6 +85,30 @@ def normalize_text(text):
     return re.sub(r"\s+", " ", text.lower().strip())
 
 
+def canonicalize_location(location):
+    """Expand abbreviations so 'us' does not substring-match 'australian'."""
+    loc = normalize_text(location or "")
+    if not loc:
+        return loc
+
+    shorthand = {
+        "us": "united states",
+        "usa": "united states",
+        "u s": "united states",
+        "uk": "britain",
+    }
+    if loc in shorthand:
+        return shorthand[loc]
+
+    loc_tokens = slug_tokens(loc)
+    for canonical, aliases in LOCATION_ALIASES.items():
+        alias_tokens = slug_tokens(canonical) | aliases
+        if loc_tokens & alias_tokens:
+            return canonical
+
+    return loc
+
+
 def slug_tokens(text):
     text = normalize_text(text)
     text = re.sub(r"[^a-z0-9\s-]", " ", text)
@@ -267,18 +291,18 @@ def infer_location_from_entry(entry):
 
     from_slug = location_from_url_slug(url)
     if from_slug:
-        return from_slug
+        return canonicalize_location(from_slug)
 
     gp = re.search(r"([a-z\s]+)\s+grand prix", name, re.I)
     if gp:
         loc = normalize_text(gp.group(1))
         if not is_generic_race_name(loc + " grand prix"):
-            return loc
+            return canonicalize_location(loc)
 
     if not is_generic_race_name(name):
-        return normalize_text(name)
+        return canonicalize_location(normalize_text(name))
 
-    return normalize_text(name)
+    return canonicalize_location(normalize_text(name))
 
 
 def canonical_race_name(entry, races_by_season):
@@ -336,12 +360,13 @@ def reconcile_round(entry, races_by_season):
 
 
 def match_score(location, race):
-    loc = normalize_text(location)
+    loc = canonicalize_location(location)
     race_name = normalize_text(race["name"])
 
     if loc == race_name:
         return 100
-    if loc in race_name or race_name in loc:
+    # Short tokens like "us" must not substring-match "australian".
+    if len(loc) >= 4 and (loc in race_name or race_name in loc):
         return 90
 
     loc_tokens = slug_tokens(loc)
