@@ -82,7 +82,7 @@ Then install `scraper/f1tv-scraper.user.js` in Tampermonkey and scrape pages on 
 
 ```bash
 python3 scripts/clean_catalog.py regions/us.json
-python3 scripts/enrich_rounds.py regions/us.json
+python3 scripts/enrich_rounds.py regions/us.json --reconcile --fix-names
 python3 scripts/validate.py regions/us.json
 ```
 

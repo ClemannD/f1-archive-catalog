@@ -25,7 +25,7 @@ Install the extension for your browser using one of the links above. You should 
 
 Alternatively, with the server running you can copy the script from http://localhost:8484/script.
 
-Confirm the script header shows `@version 1.4` or later.
+Confirm the script header shows `@version 1.5` or later.
 
 ### 3. Start the ingest server
 
@@ -66,7 +66,7 @@ Run validation and cleanup from the repo root:
 
 ```bash
 python3 scripts/clean_catalog.py regions/us.json
-python3 scripts/enrich_rounds.py regions/us.json
+python3 scripts/enrich_rounds.py regions/us.json --reconcile --fix-names
 python3 scripts/validate.py regions/us.json
 ```
 
@@ -83,7 +83,9 @@ python3 scripts/validate.py regions/us.json
 
 **"Server error" on the scrape button** — make sure `python3 scraper/scraper_server.py` is running.
 
-**Fewer races than expected** — reload the userscript (check version 1.4+). The scraper must collect cards while scrolling; older versions scrolled back to the top before scraping and missed virtualized cards.
+**Fewer races than expected** — reload the userscript (check version 1.5+). The scraper must collect cards while scrolling; older versions scrolled back to the top before scraping and missed virtualized cards.
+
+**Wrong round or generic name** (e.g. Canada stored as R6 "FORMULA 1 GRAND PRIX") — update to v1.5+, re-scrape the season listing, then run `enrich_rounds.py --reconcile --fix-names`. v1.5 uses the country label and URL slug when titles use French word order (`GRAND PRIX ... DU CANADA`), merges duplicate href captures from virtualization, and scrolls wall lists in smaller steps.
 
 **`season: 20` instead of `2025`** — update to userscript v1.3+. Run `python3 scripts/clean_catalog.py regions/us.json` to repair existing data.
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         F1TV Archive Scraper
 // @namespace    f1-archive-catalog
-// @version      1.4
+// @version      1.5
 // @description  Scrape F1TV archive pages and send data to local catalog server
 // @match        https://f1tv.formula1.com/*
 // @grant        GM_xmlhttpRequest
@@ -64,18 +64,93 @@
     return any ? parseInt(any[1]) : null;
   }
 
+  function isGenericRaceTitle(name) {
+    const n = name.trim();
+    return /^formula\s*1\s+(?:\d{4}\s+)?(?:pirelli\s+|rolex\s+|heineken\s+|gulf air\s+)?(grand prix|gran premio|grande pr[eê]mio)$/i.test(n);
+  }
+
+  function locationFromUrl(url) {
+    const slug = (url || '').split('/').pop().replace(/\?.*$/, '') || '';
+    const patterns = [
+      /(?:du|de|do|von|del|dell|osterreich|magyar|grosser)-([a-z0-9-]+)-\d{4}$/i,
+      /(?:grand-prix|gran-premio|grande-premio)-(?:[a-z0-9-]+-)*([a-z0-9-]+)-\d{4}$/i,
+      /-([a-z0-9-]+)-\d{4}$/i,
+    ];
+    for (const pat of patterns) {
+      const m = slug.match(pat);
+      if (m) {
+        const loc = m[1].replace(/-/g, ' ').trim();
+        if (!/^(formula|grand|prix|gran|premio|heineken|pirelli|rolex|gulf|air|aws|msc|cruises|lenovo|aramco|qatar|airways|etihad|singapore|airlines|johnnie|walker|honda|vtb|eyetime|tag|heuer|stc|crypto|com|louis|vuitton|gulf)$/i.test(loc)) {
+          return loc;
+        }
+      }
+    }
+    return null;
+  }
+
   function extractGrandPrixName(title) {
+    // French/Italian word order: "GRAND PRIX ... DU CANADA 2018"
+    const trailing = title.match(/\b(?:du|de|do|d'|del|dell'|von)\s+([\w\s.'-]+?)(?:\s+\d{4})?\s*$/i);
+    if (trailing) {
+      const place = trailing[1].trim();
+      if (!/^(heineken|pirelli|rolex|formula)$/i.test(place)) {
+        return /grand prix/i.test(place) ? place : place + ' Grand Prix';
+      }
+    }
+
+    const granPremio = title.match(/\bGran Premio[\w\s.'-]*/i);
+    if (granPremio && granPremio[0].length > 15) return granPremio[0].trim().replace(/\s+/g, ' ');
+    const grandePremio = title.match(/\bGrande Pr[eê]mio[\w\s.'-]*/i);
+    if (grandePremio && grandePremio[0].length > 15) return grandePremio[0].trim().replace(/\s+/g, ' ');
+
     const gp = title.match(/([\w\s.'-]*\bGrand Prix)/i);
     if (gp) return gp[1].trim().replace(/\s+/g, ' ');
-    const granPremio = title.match(/([\w\s.'-]*\bGran Premio[\w\s.'-]*)/i);
-    if (granPremio) return granPremio[1].trim().replace(/\s+/g, ' ');
-    const grandePremio = title.match(/([\w\s.'-]*\bGrande Pr[eê]mio[\w\s.'-]*)/i);
-    if (grandePremio) return grandePremio[1].trim().replace(/\s+/g, ' ');
+
     return title
       .replace(/^\d{4}\s+/, '').replace(/\s*\d{4}$/, '')
       .replace(/\b(19|20)\d{2}\b/g, '')
       .replace(/^FORMULA\s*1\s*/i, '')
       .trim();
+  }
+
+  function resolveBundleName(fullTitle, titleName, countryText, url) {
+    if (!isGenericRaceTitle(titleName)) return titleName;
+
+    if (countryText) {
+      const country = countryText.trim();
+      if (country && !/^formula\s*1$/i.test(country)) {
+        return /grand prix|gran premio|grande pr[eê]mio/i.test(country) ? country : country + ' Grand Prix';
+      }
+    }
+
+    const fromUrl = locationFromUrl(url);
+    if (fromUrl) {
+      const words = fromUrl.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      return words + ' Grand Prix';
+    }
+
+    return titleName;
+  }
+
+  function captureConfidence(entry, countryText) {
+    let score = 0;
+    if (entry.round != null) score += 1;
+    if (!isGenericRaceTitle(entry.name)) score += 3;
+    const fromUrl = locationFromUrl(entry.url);
+    if (fromUrl && countryText && countryText.toLowerCase().includes(fromUrl.split(' ')[0])) score += 3;
+    else if (fromUrl && entry.name.toLowerCase().includes(fromUrl.split(' ')[0])) score += 2;
+    return score;
+  }
+
+  function mergeCardEntry(existing, entry, existingScore, newScore) {
+    if (newScore > existingScore) {
+      return { entry, score: newScore };
+    }
+    if (newScore === existingScore) {
+      if (entry.round != null && existing.round == null) existing.round = entry.round;
+      if (!isGenericRaceTitle(entry.name) && isGenericRaceTitle(existing.name)) existing.name = entry.name;
+    }
+    return { entry: existing, score: existingScore };
   }
 
   function isRaceEvent(title, round) {
@@ -92,46 +167,81 @@
     return [...new Set(targets)];
   }
 
-  function collectVisibleCards(byHref, skipped) {
+  function collectVisibleCards(byHref, scores, skipped) {
     const add = (link, parser, type) => {
       const href = link.getAttribute('href');
-      if (!href || byHref.has(href)) return;
-      const entry = parser(link);
-      if (entry) {
-        byHref.set(href, entry);
-      } else {
+      if (!href) return;
+      const parsed = parser(link);
+      if (!parsed) {
         skipped.push({ type, title: link.textContent.trim().slice(0, 80) });
+        return;
+      }
+      const { entry, countryText } = parsed;
+      const score = captureConfidence(entry, countryText);
+      if (byHref.has(href)) {
+        const merged = mergeCardEntry(byHref.get(href), entry, scores.get(href), score);
+        byHref.set(href, merged.entry);
+        scores.set(href, merged.score);
+      } else {
+        byHref.set(href, entry);
+        scores.set(href, score);
       }
     };
 
-    document.querySelectorAll('a.video-card-item').forEach(link => add(link, parseVideoCard, 'video-card'));
+    document.querySelectorAll('a.video-card-item').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const entry = parseVideoCard(link);
+      if (entry) byHref.set(href, entry);
+      else skipped.push({ type: 'video-card', title: link.textContent.trim().slice(0, 80) });
+    });
     document.querySelectorAll('a.bundle-card-item').forEach(link => add(link, parseBundleCard, 'bundle-card'));
+  }
+
+  async function scrollAndCollect(target, byHref, scores, skipped) {
+    const step = Math.max(180, Math.floor(target.clientHeight * 0.75));
+    const maxScroll = Math.max(0, target.scrollHeight - target.clientHeight);
+    for (let pos = 0; pos <= maxScroll; pos += step) {
+      target.scrollTop = pos;
+      await new Promise(r => setTimeout(r, 250));
+      collectVisibleCards(byHref, scores, skipped);
+    }
+    target.scrollTop = maxScroll;
+    await new Promise(r => setTimeout(r, 250));
+    collectVisibleCards(byHref, scores, skipped);
   }
 
   async function scrapeAllCards() {
     const byHref = new Map();
+    const scores = new Map();
     const skipped = [];
     const targets = getScrollTargets();
     const saved = targets.map(el =>
       el === document.documentElement || el === document.body ? window.scrollY : el.scrollTop
     );
 
-    // Walk the page top-to-bottom, collecting cards at each position.
-    // F1TV virtualizes the wall list — cards unmount when scrolled away,
-    // so we must capture href+metadata while each card is visible.
-    const steps = 30;
-    for (let i = 0; i <= steps; i++) {
-      const frac = i / steps;
-      window.scrollTo(0, frac * document.documentElement.scrollHeight);
-      targets.forEach(el => {
-        if (el === document.documentElement || el === document.body) return;
-        el.scrollTop = frac * el.scrollHeight;
-      });
-      await new Promise(r => setTimeout(r, 200));
-      collectVisibleCards(byHref, skipped);
+    // Walk virtualized wall lists in small steps so each card's metadata
+    // (title, country, round) is read while that card is mounted.
+    const wallLists = [...document.querySelectorAll('.wall-list-container, [class*="wall-list"]')]
+      .filter(el => el.scrollHeight > el.clientHeight + 10);
+    if (wallLists.length) {
+      for (const wall of wallLists) {
+        await scrollAndCollect(wall, byHref, scores, skipped);
+      }
+    } else {
+      const steps = 40;
+      for (let i = 0; i <= steps; i++) {
+        const frac = i / steps;
+        window.scrollTo(0, frac * document.documentElement.scrollHeight);
+        targets.forEach(el => {
+          if (el === document.documentElement || el === document.body) return;
+          el.scrollTop = frac * el.scrollHeight;
+        });
+        await new Promise(r => setTimeout(r, 250));
+        collectVisibleCards(byHref, scores, skipped);
+      }
     }
 
-    // Restore scroll position
     window.scrollTo(0, saved[0] || 0);
     targets.forEach((el, i) => {
       if (el === document.documentElement || el === document.body) return;
@@ -159,23 +269,14 @@
     if (!isRaceEvent(fullTitle, round)) return null;
 
     const titleName = extractGrandPrixName(fullTitle);
-    const countryEl =
-      link.querySelector('.bundle-card-item-country-container .line-clamp') ||
-      link.querySelector('.bundle-card-item-country-container');
-
-    let name;
-    if (/grand prix|gran premio|grande pr[eê]mio/i.test(titleName)) {
-      name = titleName;
-    } else if (countryEl) {
-      const country = countryEl.textContent.trim();
-      name = /grand prix/i.test(country) ? country : country + ' Grand Prix';
-    } else {
-      name = titleName;
-    }
+    const countryEl = link.querySelector('.bundle-card-item-country-container .line-clamp');
+    const countryText = countryEl ? countryEl.textContent.trim() : null;
 
     const href = link.getAttribute('href');
     const url = href ? 'https://f1tv.formula1.com' + href : null;
-    return { season, round, name, type: 'race', duration: null, url };
+    const name = resolveBundleName(fullTitle, titleName, countryText, url);
+    const entry = { season, round, name, type: 'race', duration: null, url };
+    return { entry, countryText };
   }
 
   btn.addEventListener('click', async () => {

@@ -5,6 +5,7 @@ import re
 from pathlib import Path
 
 VALID_TYPES = {"race", "extended_highlights", "highlights", "season_review"}
+ROUND_BOUND_TYPES = {"race", "extended_highlights", "highlights"}
 
 DEFAULT_RACES_PATH = (
     Path(__file__).resolve().parents[2].parent
@@ -40,6 +41,7 @@ LOCATION_ALIASES = {
     "saudi arabia": {"saudi arabia", "saudi", "jeddah"},
     "singapore": {"singapore"},
     "spain": {"spain", "spanish", "barcelona", "catalunya"},
+    "styrian": {"styrian", "steiermark", "styria"},
     "turkey": {"turkey", "turkish", "istanbul"},
     "united arab emirates": {"abu dhabi", "united arab emirates", "uae"},
     "united states": {"united states", "us", "usa", "austin", "las vegas", "miami", "united states grand prix"},
@@ -108,6 +110,75 @@ def race_search_terms(race):
     return terms
 
 
+GENERIC_RACE_NAMES = {
+    "formula 1 grand prix",
+    "formula 1 pirelli grand prix",
+    "formula 1 gran premio",
+    "formula 1 grande prêmio",
+    "formula 1 grande premio",
+}
+
+SLUG_STOPWORDS = {
+    "formula", "grand", "prix", "gran", "premio", "grande",
+    "heineken", "pirelli", "rolex", "gulf", "air", "aws", "msc", "cruises",
+    "lenovo", "aramco", "qatar", "airways", "etihad", "singapore", "airlines",
+    "johnnie", "walker", "honda", "vtb", "eyetime", "tag", "heuer", "stc",
+    "crypto", "com", "louis", "vuitton", "grosser", "von", "osterreich",
+    "magyar", "nagydij", "preis", "eyetime",
+}
+
+
+def is_season_review_entry(entry):
+    if entry.get("type") == "season_review":
+        return True
+    name = normalize_text(entry.get("name", ""))
+    return name in {"season review", "season recap"}
+
+
+def is_generic_race_name(name):
+    n = normalize_text(name or "")
+    if n in GENERIC_RACE_NAMES:
+        return True
+    return bool(
+        re.match(
+            r"^formula 1(?: \d{4})?(?: (?:pirelli|rolex|heineken|gulf air|aws|aramco|qatar airways|etihad airways|singapore airlines|johnnie walker|honda|vtb|eyetime|tag heuer|stc|crypto\.com|louis vuitton|msc cruises|lenovo))* (?:grand prix|gran premio|grande pr[eê]mio)$",
+            n,
+        )
+    )
+
+
+def location_from_url_slug(url):
+    if not url:
+        return None
+    slug = url.rsplit("/", 1)[-1].split("?")[0]
+
+    m = re.search(r"in-review-([a-z0-9-]+)", slug)
+    if m:
+        return normalize_text(m.group(1).replace("-", " "))
+
+    m = re.search(r"(\d{4})-([a-z0-9-]+?)(?:-grand-prix|-extended|-in-review|$)", slug)
+    if m:
+        return normalize_text(m.group(2).replace("-", " "))
+
+    for pat in (
+        r"(?:du|de|do|von|del|dell|osterreich|magyar|grosser)-([a-z0-9-]+)-\d{4}$",
+        r"(?:grand-prix|gran-premio|grande-premio)-(?:[a-z0-9-]+-)*([a-z0-9-]+)-\d{4}$",
+        r"-([a-z0-9-]+)-\d{4}$",
+    ):
+        m = re.search(pat, slug)
+        if not m:
+            continue
+        parts = [p for p in m.group(1).split("-") if p]
+        if not parts:
+            continue
+        loc = normalize_text(parts[-1] if len(parts) > 1 else m.group(1).replace("-", " "))
+        tokens = slug_tokens(loc)
+        if tokens and tokens - SLUG_STOPWORDS:
+            return loc
+
+    return None
+
+
 def infer_location_from_entry(entry):
     name = entry.get("name", "")
     url = entry.get("url", "") or ""
@@ -124,20 +195,84 @@ def infer_location_from_entry(entry):
     if m:
         return normalize_text(m.group(1))
 
-    slug = url.rsplit("/", 1)[-1] if url else ""
-    m = re.search(r"in-review-([a-z-]+)", slug)
+    m = re.search(
+        r"\b(?:du|de|do|d'|del|dell'|von)\s+([\w\s.'-]+?)(?:\s+\d{4})?\s*$",
+        name,
+        re.I,
+    )
     if m:
-        return normalize_text(m.group(1).replace("-", " "))
+        place = normalize_text(m.group(1))
+        if place not in {"heineken", "pirelli", "rolex", "formula"}:
+            return place
 
-    m = re.search(r"(\d{4})-([a-z-]+?)(?:-grand-prix|-extended|-in-review|$)", slug)
-    if m:
-        return normalize_text(m.group(2).replace("-", " "))
+    from_slug = location_from_url_slug(url)
+    if from_slug:
+        return from_slug
 
     gp = re.search(r"([a-z\s]+)\s+grand prix", name, re.I)
     if gp:
-        return normalize_text(gp.group(1))
+        loc = normalize_text(gp.group(1))
+        if not is_generic_race_name(loc + " grand prix"):
+            return loc
+
+    if not is_generic_race_name(name):
+        return normalize_text(name)
 
     return normalize_text(name)
+
+
+def canonical_race_name(entry, races_by_season):
+    season = entry.get("season")
+    round_ = entry.get("round")
+    if season is None or round_ is None:
+        return None
+    for race in races_by_season.get(season, []):
+        if race["round"] == round_:
+            return race["name"]
+    return None
+
+
+def reconcile_round(entry, races_by_season):
+    """Re-infer round from URL/name when the stored round looks wrong."""
+    if entry.get("type") != "race":
+        return entry.get("round")
+
+    probe = dict(entry)
+    probe["round"] = None
+    inferred = infer_round(probe, races_by_season)
+    if inferred is None:
+        return entry.get("round")
+
+    current = entry.get("round")
+    if current is None:
+        return inferred
+    if current == inferred:
+        return current
+
+    if is_generic_race_name(entry.get("name", "")):
+        return inferred
+
+    location = infer_location_from_entry(entry)
+    if not location:
+        return current
+
+    current_race = next(
+        (r for r in races_by_season.get(entry["season"], []) if r["round"] == current),
+        None,
+    )
+    inferred_race = next(
+        (r for r in races_by_season.get(entry["season"], []) if r["round"] == inferred),
+        None,
+    )
+    if not inferred_race:
+        return current
+
+    if current_race and match_score(location, current_race) >= 15:
+        return current
+    if match_score(location, inferred_race) >= 15:
+        return inferred
+
+    return current
 
 
 def match_score(location, race):
